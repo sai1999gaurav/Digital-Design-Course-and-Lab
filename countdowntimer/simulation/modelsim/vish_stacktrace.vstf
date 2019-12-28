@@ -1,0 +1,16 @@
+# Current time Sun Mar 31 14:34:56 2019
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "10.5b"
+# Version = "2016.10"
+# Date = "Oct  5 2016"
+# Platform = linuxpe
+# 0    0xf7fd5059: '<unknown (@0xf7fd5059)>'
+# 1    0x0854b8f4: 'Tcl_DoOneEvent + 0xf4' in '/home/gaurav/Desktop/modelsim_ase/linuxaloem/vish'
+# 2    0x083f2b8f: 'Tk_MainLoop + 0x1f' in '/home/gaurav/Desktop/modelsim_ase/linuxaloem/vish'
+# 3    0x083fb4a4: 'Tk_MainEx + 0x374' in '/home/gaurav/Desktop/modelsim_ase/linuxaloem/vish'
+# 4    0x081fee66: 'vish_inner_loop + 0x116' in '/home/gaurav/Desktop/modelsim_ase/linuxaloem/vish'
+# 5    0x080e6029: 'main + 0x989' in '/home/gaurav/Desktop/modelsim_ase/linuxaloem/vish'
+# 6    0xf7ac9e7c: '__libc_start_main + 0xec' in '/lib/i386-linux-gnu/libc.so.6'
+# End of Stack Trace
+
