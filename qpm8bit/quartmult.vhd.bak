@@ -1,0 +1,28 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.Gates.all;
+
+entity quartmult is
+ port(A,B : in std_logic_vector(7 downto 0); C: out std_logic_vector(15 downto 0));
+end entity quartmult;
+
+component multiply is
+port (X,Y: in std_logic_vector(4 downto 0);
+Z: out std_logic_vector(9 downto 0));
+end component multiply;
+component fa5bit is
+port (a,b : in std_logic_vector(4 downto 0);					--input ports are named and their datatype is defined, a and b are 8 bit inputs to be added
+      cin : in std_logic;							--input ports are named and their datatype is defined, cin is the initial carry for addition
+   	s : out std_logic_vector(4 downto 0);					--output ports are named and their datatype is defined, s is a 8 bit sum
+     cout : out std_logic);	
+end component fa5bit;
+architecture behave of quartmult is
+signal s1 : std_logic_vector(4 downto 0)
+m1: multiply port map (X=>"1" & A(3 downto 0), Y=> "1" & B(3 downto 0), Z=>C(9 downto 0));
+f1: fa5bit port map (a=>"00" & A(6 downto 4), b=>"00" &  B(6 downto 4), cin=>'0', s=>s1);
+f2: fa5bit port map(a=>s1, b=>"00011", cin=>'1', s=>C(14 downto 10));
+x1: XOR_2 port map(A=>A(7), B=>B(7), Y=>C(15));
+end behave;

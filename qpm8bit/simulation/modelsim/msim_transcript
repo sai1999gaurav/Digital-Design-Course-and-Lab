@@ -1,0 +1,191 @@
+# do DUT_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /home/gaurav/Desktop/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/quartmult.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/quartmult.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity quartmult
+# -- Compiling architecture behave of quartmult
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/MUX4.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/MUX4.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX4
+# -- Compiling architecture Equations of MUX4
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/MUX2.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/MUX2.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX2
+# -- Compiling architecture Equations of MUX2
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/MUX3.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/MUX3.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX3
+# -- Compiling architecture Equations of MUX3
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/MUX.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/MUX.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX
+# -- Compiling architecture Equations of MUX
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/left_shift.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/left_shift.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity left_shift
+# -- Compiling architecture design of left_shift
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/booth2bit_v1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/booth2bit_v1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity booth2bit
+# -- Compiling architecture behave of booth2bit
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/fa5bit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/fa5bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fa5bit
+# -- Compiling architecture fa5bit_beh of fa5bit
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/fa1bit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/fa1bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fa1bit
+# -- Compiling architecture fa1bit_beh of fa1bit
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/DUT.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/DUT.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DUT
+# -- Compiling architecture DutWrap of DUT
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/fa16bit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/fa16bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fa16bit
+# -- Compiling architecture fa16bit_beh of fa16bit
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/fa8bit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/fa8bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fa8bit
+# -- Compiling architecture fa8bit_beh of fa8bit
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/Testbench.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:18:26 on Apr 20,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/qpm8bit/Testbench.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Testbench
+# -- Compiling architecture Behave of Testbench
+# End time: 23:18:26 on Apr 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 23:18:26 on Apr 20,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testbench(behave)
+# Loading work.dut(dutwrap)
+# Loading work.quartmult(behave)
+# Loading ieee.numeric_std(body)
+# Loading work.booth2bit(behave)
+# Loading work.mux3(equations)
+# Loading work.left_shift(design)
+# Loading work.mux(equations)
+# Loading work.fa16bit(fa16bit_beh)
+# Loading work.fa8bit(fa8bit_beh)
+# Loading work.fa1bit(fa1bit_beh)
+# Loading work.mux2(equations)
+# Loading work.fa5bit(fa5bit_beh)
+# Loading work.mux4(equations)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Note: SUCCESS, all tests passed.
+#    Time: 2883584 ns  Iteration: 0  Instance: /testbench
+# 
+# stdin: <EOF>
+# End time: 23:51:25 on Apr 20,2019, Elapsed time: 0:32:59
+# Errors: 0, Warnings: 1
