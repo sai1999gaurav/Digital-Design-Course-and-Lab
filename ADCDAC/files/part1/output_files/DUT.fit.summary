@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu May  2 16:10:56 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : DUT
+Top-level Entity Name : ADCconv
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 120 / 1,270 ( 9 % )
+Total pins : 22 / 114 ( 19 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

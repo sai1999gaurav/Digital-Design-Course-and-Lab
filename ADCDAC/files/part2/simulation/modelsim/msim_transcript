@@ -1,0 +1,168 @@
+# do DUT_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /home/gaurav/Desktop/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/gaurav/Desktop/lab8/part2/filter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:51:53 on May 02,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/lab8/part2/filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity filter
+# -- Compiling architecture Behave of filter
+# End time: 13:51:53 on May 02,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/lab8/part2/DUT.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:51:53 on May 02,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/lab8/part2/DUT.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity DUT
+# -- Compiling architecture Behave of DUT
+# End time: 13:51:53 on May 02,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gaurav/Desktop/lab8/part2/ADCconv.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:51:53 on May 02,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/lab8/part2/ADCconv.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity fsm
+# -- Compiling architecture arch of fsm
+# End time: 13:51:53 on May 02,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/gaurav/Desktop/lab8/part2/Testbench.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:51:53 on May 02,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/lab8/part2/Testbench.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Testbench
+# -- Compiling architecture Behave of Testbench
+# End time: 13:51:53 on May 02,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 13:51:53 on May 02,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testbench(behave)
+# Loading ieee.numeric_std(body)
+# Loading work.dut(behave)
+# ** Fatal: (vsim-3817) Port "ADC_out" of entity "dut" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut_instance File: /home/gaurav/Desktop/lab8/part2/DUT.vhdl Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./DUT_run_msim_rtl_vhdl.do PAUSED at line 14
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=\"+acc\" rtl_work.filter(behave)
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" rtl_work.filter(behave) 
+# Start time: 13:51:53 on May 02,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.filter(behave)
+add wave -position insertpoint  \
+sim:/filter/x \
+sim:/filter/sampin \
+sim:/filter/y \
+sim:/filter/clk \
+sim:/filter/reset
+force -freeze sim:/filter/x 00001111 0
+force -freeze sim:/filter/sampin 1 0
+force -freeze sim:/filter/clk 1 0, 0 {10000 ps} -r 20ns
+force -freeze sim:/filter/reset 0 0
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/filter/reset 1 0
+run
+run
+run
+run
+run
+run
+force -freeze sim:/filter/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 16:19:50 on May 02,2019, Elapsed time: 2:27:57
+# Errors: 1, Warnings: 1

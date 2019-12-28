@@ -1,0 +1,33 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'input_vector[9]'
+Slack : -7.871
+TNS   : -298.219
+
+Type  : Setup 'fsm:add_instance|fsm_state.s1'
+Slack : -1.570
+TNS   : -4.987
+
+Type  : Hold 'fsm:add_instance|fsm_state.s1'
+Slack : -3.091
+TNS   : -6.752
+
+Type  : Hold 'input_vector[9]'
+Slack : -2.499
+TNS   : -41.779
+
+Type  : Minimum Pulse Width 'input_vector[9]'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'fsm:add_instance|Count[2]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'fsm:add_instance|fsm_state.s1'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

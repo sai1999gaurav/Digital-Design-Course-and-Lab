@@ -1,0 +1,373 @@
+Analysis & Synthesis report for DUT
+Thu May  2 12:03:10 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |DUT|fsm:fadc|fsm_state
+  9. User-Specified and Inferred Latches
+ 10. Logic Cells Representing Combinational Loops
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu May  2 12:03:10 2019       ;
+; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name               ; DUT                                         ;
+; Top-level Entity Name       ; DUT                                         ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 260                                         ;
+; Total pins                  ; 22                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                            ; DUT                ; DUT                ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                        ;
++----------------------------------+-----------------+-----------------+----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                 ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------+---------+
+; filter.vhd                       ; yes             ; User VHDL File  ; /home/gaurav/Desktop/lab8/part2/filter.vhd   ;         ;
+; DUT.vhdl                         ; yes             ; User VHDL File  ; /home/gaurav/Desktop/lab8/part2/DUT.vhdl     ;         ;
+; ADCconv.vhdl                     ; yes             ; User VHDL File  ; /home/gaurav/Desktop/lab8/part2/ADCconv.vhdl ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 260   ;
+;     -- Combinational with no register       ; 145   ;
+;     -- Register only                        ; 6     ;
+;     -- Combinational with a register        ; 109   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 31    ;
+;     -- 3 input functions                    ; 74    ;
+;     -- 2 input functions                    ; 141   ;
+;     -- 1 input functions                    ; 8     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 169   ;
+;     -- arithmetic mode                      ; 91    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 36    ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 115   ;
+; Total logic cells in carry chains           ; 99    ;
+; I/O pins                                    ; 22    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 115   ;
+; Total fan-out                               ; 872   ;
+; Average fan-out                             ; 3.09  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |DUT                       ; 260 (0)     ; 115          ; 0          ; 22   ; 0            ; 145 (0)      ; 6 (0)             ; 109 (0)          ; 99 (0)          ; 0 (0)      ; |DUT                ; DUT         ; work         ;
+;    |filter:f|              ; 141 (141)   ; 65           ; 0          ; 0    ; 0            ; 76 (76)      ; 0 (0)             ; 65 (65)          ; 67 (67)         ; 0 (0)      ; |DUT|filter:f       ; filter      ; work         ;
+;    |fsm:fadc|              ; 119 (119)   ; 50           ; 0          ; 0    ; 0            ; 69 (69)      ; 6 (6)             ; 44 (44)          ; 32 (32)         ; 0 (0)      ; |DUT|fsm:fadc       ; fsm         ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DUT|fsm:fadc|fsm_state                                                                                              ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; Name         ; fsm_state.s8 ; fsm_state.s7 ; fsm_state.s6 ; fsm_state.s5 ; fsm_state.s4 ; fsm_state.s3 ; fsm_state.s2 ; fsm_state.s1 ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; fsm_state.s1 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; fsm_state.s2 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ;
+; fsm_state.s3 ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ;
+; fsm_state.s4 ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ;
+; fsm_state.s5 ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ;
+; fsm_state.s6 ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; fsm_state.s7 ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; fsm_state.s8 ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; fsm:fadc|next_count[2]                             ; fsm:fadc|WideOr7    ; yes                    ;
+; fsm:fadc|next_count[3]                             ; fsm:fadc|WideOr7    ; yes                    ;
+; fsm:fadc|next_count[1]                             ; fsm:fadc|WideOr7    ; yes                    ;
+; fsm:fadc|next_count[0]                             ; fsm:fadc|WideOr7    ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; filter:f|y[0]                                          ;   ;
+; filter:f|y[1]                                          ;   ;
+; filter:f|y[2]                                          ;   ;
+; filter:f|y[3]                                          ;   ;
+; filter:f|y[4]                                          ;   ;
+; filter:f|y[5]                                          ;   ;
+; filter:f|y[6]                                          ;   ;
+; filter:f|y[7]                                          ;   ;
+; Number of logic cells representing combinational loops ; 8 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; filter:f|r0[9..13,15]                  ; Merged with filter:f|r0[8]             ;
+; filter:f|r1[9..13,15]                  ; Merged with filter:f|r1[8]             ;
+; filter:f|r0[14]                        ; Merged with filter:f|r0[8]             ;
+; filter:f|r2[9..13,15]                  ; Merged with filter:f|r2[8]             ;
+; filter:f|r1[14]                        ; Merged with filter:f|r1[8]             ;
+; filter:f|r3[9..13,15]                  ; Merged with filter:f|r3[8]             ;
+; filter:f|r2[14]                        ; Merged with filter:f|r2[8]             ;
+; filter:f|r4[9..13,15]                  ; Merged with filter:f|r4[8]             ;
+; filter:f|r3[14]                        ; Merged with filter:f|r3[8]             ;
+; filter:f|r5[9..13,15]                  ; Merged with filter:f|r5[8]             ;
+; filter:f|r4[14]                        ; Merged with filter:f|r4[8]             ;
+; filter:f|r6[9..13,15]                  ; Merged with filter:f|r6[8]             ;
+; filter:f|r5[14]                        ; Merged with filter:f|r5[8]             ;
+; filter:f|r7[12,13,15]                  ; Lost fanout                            ;
+; filter:f|r7[8..10]                     ; Merged with filter:f|r7[11]            ;
+; filter:f|r6[14]                        ; Merged with filter:f|r6[8]             ;
+; filter:f|r7[14]                        ; Lost fanout                            ;
+; filter:f|r0[8]                         ; Stuck at GND due to stuck port data_in ;
+; filter:f|r1[8]                         ; Stuck at GND due to stuck port data_in ;
+; filter:f|r2[8]                         ; Stuck at GND due to stuck port data_in ;
+; filter:f|r3[8]                         ; Stuck at GND due to stuck port data_in ;
+; filter:f|r4[8]                         ; Stuck at GND due to stuck port data_in ;
+; filter:f|r5[8]                         ; Stuck at GND due to stuck port data_in ;
+; filter:f|r6[8]                         ; Stuck at GND due to stuck port data_in ;
+; filter:f|r7[11]                        ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 64 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                  ;
++----------------+---------------------------+-------------------------------------------------+
+; Register name  ; Reason for Removal        ; Registers Removed due to This Register          ;
++----------------+---------------------------+-------------------------------------------------+
+; filter:f|r4[8] ; Stuck at GND              ; filter:f|r5[8], filter:f|r6[8], filter:f|r7[11] ;
+;                ; due to stuck port data_in ;                                                 ;
+; filter:f|r2[8] ; Stuck at GND              ; filter:f|r3[8]                                  ;
+;                ; due to stuck port data_in ;                                                 ;
++----------------+---------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 115   ;
+; Number of registers using Synchronous Clear  ; 36    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 68    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |DUT|filter:f|r3[4]        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DUT|fsm:fadc|Count[1]     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |DUT|fsm:fadc|fsm_state    ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |DUT|fsm:fadc|fsm_state    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu May  2 12:02:57 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c DUT
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file filter.vhd
+    Info (12022): Found design unit 1: filter-Behave File: /home/gaurav/Desktop/lab8/part2/filter.vhd Line: 15
+    Info (12023): Found entity 1: filter File: /home/gaurav/Desktop/lab8/part2/filter.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file DUT.vhdl
+    Info (12022): Found design unit 1: DUT-Behave File: /home/gaurav/Desktop/lab8/part2/DUT.vhdl Line: 13
+    Info (12023): Found entity 1: DUT File: /home/gaurav/Desktop/lab8/part2/DUT.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file countdowntimer.vhdl
+    Info (12022): Found design unit 1: CountDownTimer-Behave File: /home/gaurav/Desktop/lab8/part2/countdowntimer.vhdl Line: 15
+    Info (12023): Found entity 1: CountDownTimer File: /home/gaurav/Desktop/lab8/part2/countdowntimer.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ADCconv.vhdl
+    Info (12022): Found design unit 1: fsm-arch File: /home/gaurav/Desktop/lab8/part2/ADCconv.vhdl Line: 12
+    Info (12023): Found entity 1: fsm File: /home/gaurav/Desktop/lab8/part2/ADCconv.vhdl Line: 5
+Info (12127): Elaborating entity "DUT" for the top level hierarchy
+Info (12128): Elaborating entity "fsm" for hierarchy "fsm:fadc" File: /home/gaurav/Desktop/lab8/part2/DUT.vhdl Line: 29
+Warning (10631): VHDL Process Statement warning at ADCconv.vhdl(23): inferring latch(es) for signal or variable "next_count", which holds its previous value in one or more paths through the process File: /home/gaurav/Desktop/lab8/part2/ADCconv.vhdl Line: 23
+Info (10041): Inferred latch for "next_count[0]" at ADCconv.vhdl(23) File: /home/gaurav/Desktop/lab8/part2/ADCconv.vhdl Line: 23
+Info (10041): Inferred latch for "next_count[1]" at ADCconv.vhdl(23) File: /home/gaurav/Desktop/lab8/part2/ADCconv.vhdl Line: 23
+Info (10041): Inferred latch for "next_count[2]" at ADCconv.vhdl(23) File: /home/gaurav/Desktop/lab8/part2/ADCconv.vhdl Line: 23
+Info (10041): Inferred latch for "next_count[3]" at ADCconv.vhdl(23) File: /home/gaurav/Desktop/lab8/part2/ADCconv.vhdl Line: 23
+Info (12128): Elaborating entity "filter" for hierarchy "filter:f" File: /home/gaurav/Desktop/lab8/part2/DUT.vhdl Line: 30
+Warning (10492): VHDL Process Statement warning at filter.vhd(40): signal "fsm_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gaurav/Desktop/lab8/part2/filter.vhd Line: 40
+Warning (10492): VHDL Process Statement warning at filter.vhd(41): signal "fsm_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gaurav/Desktop/lab8/part2/filter.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at filter.vhd(45): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gaurav/Desktop/lab8/part2/filter.vhd Line: 45
+Warning (10631): VHDL Process Statement warning at filter.vhd(26): inferring latch(es) for signal or variable "next_y_var", which holds its previous value in one or more paths through the process File: /home/gaurav/Desktop/lab8/part2/filter.vhd Line: 26
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 282 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 260 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 956 megabytes
+    Info: Processing ended: Thu May  2 12:03:10 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:30
+
+

@@ -1,0 +1,33 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -8.626
+TNS   : -314.014
+
+Type  : Setup 'fsm_state.s1'
+Slack : -1.412
+TNS   : -3.569
+
+Type  : Hold 'fsm_state.s1'
+Slack : -5.180
+TNS   : -17.228
+
+Type  : Hold 'clk'
+Slack : -1.406
+TNS   : -25.593
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'Count[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'fsm_state.s1'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

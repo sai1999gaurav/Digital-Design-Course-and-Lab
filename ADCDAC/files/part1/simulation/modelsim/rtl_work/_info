@@ -1,0 +1,129 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/gaurav/Desktop/lab8/part1/simulation/modelsim
+Edut
+Z1 w1556787154
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8/home/gaurav/Desktop/lab8/part1/DUT.vhdl
+Z5 F/home/gaurav/Desktop/lab8/part1/DUT.vhdl
+l0
+L7
+VC1Tj=>O7VO?]XzlgjI13m0
+!s100 @;O_DmoKocc3Q74KFJ?A33
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1556787234
+!i10b 1
+Z8 !s108 1556787234.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/lab8/part1/DUT.vhdl|
+Z10 !s107 /home/gaurav/Desktop/lab8/part1/DUT.vhdl|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Adutwrap
+R2
+R3
+DEx4 work 3 dut 0 22 C1Tj=>O7VO?]XzlgjI13m0
+l21
+L12
+VMSS2XJSVX><E^G^jezz_b2
+!s100 WXmBL`EA6jkoo`<E;z0?j3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Efsm
+Z13 w1556787078
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z15 8/home/gaurav/Desktop/lab8/part1/ADCconv.vhdl
+Z16 F/home/gaurav/Desktop/lab8/part1/ADCconv.vhdl
+l0
+L5
+VioV7n0LjXUC90W;nKz4jE2
+!s100 PRELj^8@f:MmDbQkG3lC]1
+R6
+32
+Z17 !s110 1556787247
+!i10b 1
+Z18 !s108 1556787247.000000
+Z19 !s90 -reportprogress|300|-work|work|/home/gaurav/Desktop/lab8/part1/ADCconv.vhdl|
+Z20 !s107 /home/gaurav/Desktop/lab8/part1/ADCconv.vhdl|
+!i113 1
+Z21 o-work work
+R12
+Aarch
+R14
+R2
+R3
+Z22 DEx4 work 3 fsm 0 22 ioV7n0LjXUC90W;nKz4jE2
+l24
+L14
+Z23 VZfIDn90Lj^2Gm5Zzn:m=d2
+Z24 !s100 ^@L7CMb<`[Kj3Oz>T;b7T3
+R6
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R21
+R12
+Etestbench
+Z25 w1556774241
+R3
+R2
+R0
+Z26 8/home/gaurav/Desktop/lab8/part1/Testbench.vhdl
+Z27 F/home/gaurav/Desktop/lab8/part1/Testbench.vhdl
+l0
+L7
+V]iKK_Z9L:G9B:i8c]3eFH0
+!s100 bWf8kl8zb90X@P1m>V^K20
+R6
+31
+R7
+!i10b 1
+R8
+Z28 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/lab8/part1/Testbench.vhdl|
+Z29 !s107 /home/gaurav/Desktop/lab8/part1/Testbench.vhdl|
+!i113 1
+R11
+R12
+Abehave
+R3
+R2
+DEx4 work 9 testbench 0 22 ]iKK_Z9L:G9B:i8c]3eFH0
+l69
+L9
+V1b@]820>_>lRkJD<Tn:Rg0
+!s100 NjGAoFOF3>YIPK?cSn0Z71
+R6
+31
+R7
+!i10b 1
+R8
+R28
+R29
+!i113 1
+R11
+R12

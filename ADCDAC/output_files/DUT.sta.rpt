@@ -1,0 +1,615 @@
+Timing Analyzer report for DUT
+Fri Apr 12 16:58:23 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'input_vector[9]'
+ 12. Setup: 'fsm:add_instance|fsm_state.s1'
+ 13. Hold: 'fsm:add_instance|fsm_state.s1'
+ 14. Hold: 'input_vector[9]'
+ 15. Setup Transfers
+ 16. Hold Transfers
+ 17. Report TCCS
+ 18. Report RSKM
+ 19. Unconstrained Paths Summary
+ 20. Clock Status Summary
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; DUT                                                 ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                       ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+; Clock Name                    ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                           ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+; fsm:add_instance|Count[2]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { fsm:add_instance|Count[2] }     ;
+; fsm:add_instance|fsm_state.s1 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { fsm:add_instance|fsm_state.s1 } ;
+; input_vector[9]               ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { input_vector[9] }               ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+
+
++-------------------------------------------------------+
+; Fmax Summary                                          ;
++------------+-----------------+-----------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name      ; Note ;
++------------+-----------------+-----------------+------+
+; 112.73 MHz ; 112.73 MHz      ; input_vector[9] ;      ;
++------------+-----------------+-----------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------------------------+
+; Setup Summary                                          ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; input_vector[9]               ; -7.871 ; -298.219      ;
+; fsm:add_instance|fsm_state.s1 ; -1.570 ; -4.987        ;
++-------------------------------+--------+---------------+
+
+
++--------------------------------------------------------+
+; Hold Summary                                           ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; fsm:add_instance|fsm_state.s1 ; -3.091 ; -6.752        ;
+; input_vector[9]               ; -2.499 ; -41.779       ;
++-------------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------------------------------+
+; Minimum Pulse Width Summary                            ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; input_vector[9]               ; -2.289 ; -2.289        ;
+; fsm:add_instance|Count[2]     ; 0.500  ; 0.000         ;
+; fsm:add_instance|fsm_state.s1 ; 0.500  ; 0.000         ;
++-------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'input_vector[9]'                                                                                                                            ;
++--------+-------------------------------+-------------------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                       ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+-------------------------------+-----------------+-----------------+--------------+------------+------------+
+; -7.871 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|fsm_state.s4 ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.538      ;
+; -7.801 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.468      ;
+; -7.787 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.454      ;
+; -7.727 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.394      ;
+; -7.689 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.356      ;
+; -7.671 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.338      ;
+; -7.668 ; fsm:add_instance|Count2[12]   ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.335      ;
+; -7.664 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.331      ;
+; -7.657 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.324      ;
+; -7.643 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.310      ;
+; -7.640 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.307      ;
+; -7.629 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.296      ;
+; -7.597 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.264      ;
+; -7.594 ; fsm:add_instance|Count2[23]   ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.261      ;
+; -7.572 ; fsm:add_instance|Count2[13]   ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.239      ;
+; -7.569 ; fsm:add_instance|Count2[11]   ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.236      ;
+; -7.569 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.236      ;
+; -7.568 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[13]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.235      ;
+; -7.559 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.226      ;
+; -7.554 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[13]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.221      ;
+; -7.538 ; fsm:add_instance|Count2[12]   ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.205      ;
+; -7.534 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.201      ;
+; -7.531 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.198      ;
+; -7.524 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[22]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.191      ;
+; -7.510 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.177      ;
+; -7.510 ; fsm:add_instance|Count2[12]   ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.177      ;
+; -7.510 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[22]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.177      ;
+; -7.506 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.173      ;
+; -7.494 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[13]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.161      ;
+; -7.482 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.149      ;
+; -7.481 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|fsm_state.s4 ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.148      ;
+; -7.469 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[19]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.136      ;
+; -7.457 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|fsm_state.s4 ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.124      ;
+; -7.456 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|Count2[13]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.123      ;
+; -7.455 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[19]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.122      ;
+; -7.451 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[10]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.118      ;
+; -7.450 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[22]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.117      ;
+; -7.442 ; fsm:add_instance|Count2[13]   ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.109      ;
+; -7.441 ; fsm:add_instance|Count2[20]   ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.108      ;
+; -7.439 ; fsm:add_instance|Count2[11]   ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.106      ;
+; -7.435 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|fsm_state.s8 ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.102      ;
+; -7.431 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|Count2[13]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.098      ;
+; -7.414 ; fsm:add_instance|Count2[13]   ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.081      ;
+; -7.412 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|Count2[22]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.079      ;
+; -7.411 ; fsm:add_instance|Count2[11]   ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.078      ;
+; -7.407 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|Count2[13]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.074      ;
+; -7.395 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[19]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.062      ;
+; -7.391 ; fsm:add_instance|Count2[12]   ; fsm:add_instance|Count2[22]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.058      ;
+; -7.391 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[10]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.058      ;
+; -7.387 ; fsm:add_instance|Count2[20]   ; fsm:add_instance|fsm_state.s4 ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.054      ;
+; -7.387 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|Count2[22]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.054      ;
+; -7.380 ; fsm:add_instance|Count2[14]   ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.047      ;
+; -7.375 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[16]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.042      ;
+; -7.365 ; fsm:add_instance|Count2[10]   ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.032      ;
+; -7.363 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|Count2[22]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.030      ;
+; -7.361 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[16]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.028      ;
+; -7.358 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.025      ;
+; -7.357 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|Count2[19]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.024      ;
+; -7.349 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[18]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.016      ;
+; -7.343 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[17]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.010      ;
+; -7.336 ; fsm:add_instance|Count2[12]   ; fsm:add_instance|Count2[19]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.003      ;
+; -7.335 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[18]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 8.002      ;
+; -7.332 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|Count2[19]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.999      ;
+; -7.331 ; fsm:add_instance|fsm_state.s8 ; fsm:add_instance|fsm_state.s4 ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.998      ;
+; -7.329 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[17]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.996      ;
+; -7.310 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[9]    ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.977      ;
+; -7.308 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|Count2[19]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.975      ;
+; -7.301 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[16]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.968      ;
+; -7.295 ; fsm:add_instance|Count2[13]   ; fsm:add_instance|Count2[22]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.962      ;
+; -7.292 ; fsm:add_instance|Count2[11]   ; fsm:add_instance|Count2[22]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.959      ;
+; -7.283 ; fsm:add_instance|Count2[20]   ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.950      ;
+; -7.280 ; fsm:add_instance|Count2[18]   ; fsm:add_instance|fsm_state.s4 ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.947      ;
+; -7.275 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[18]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.942      ;
+; -7.269 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[17]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.936      ;
+; -7.263 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|Count2[16]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.930      ;
+; -7.250 ; fsm:add_instance|Count2[14]   ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.917      ;
+; -7.250 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|Count2[9]    ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.917      ;
+; -7.242 ; fsm:add_instance|Count2[12]   ; fsm:add_instance|Count2[16]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.909      ;
+; -7.240 ; fsm:add_instance|Count2[13]   ; fsm:add_instance|Count2[19]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.907      ;
+; -7.238 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|Count2[16]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.905      ;
+; -7.237 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|Count2[18]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.904      ;
+; -7.237 ; fsm:add_instance|Count2[11]   ; fsm:add_instance|Count2[19]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.904      ;
+; -7.235 ; fsm:add_instance|Count2[10]   ; fsm:add_instance|Count2[20]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.902      ;
+; -7.231 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|Count2[17]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.898      ;
+; -7.223 ; fsm:add_instance|Count2[21]   ; fsm:add_instance|fsm_state.s4 ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.890      ;
+; -7.222 ; fsm:add_instance|Count2[14]   ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.889      ;
+; -7.221 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[27]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.888      ;
+; -7.216 ; fsm:add_instance|Count2[12]   ; fsm:add_instance|Count2[18]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.883      ;
+; -7.214 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|Count2[16]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.881      ;
+; -7.212 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|Count2[18]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.879      ;
+; -7.210 ; fsm:add_instance|Count2[12]   ; fsm:add_instance|Count2[17]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.877      ;
+; -7.207 ; fsm:add_instance|Count2[10]   ; fsm:add_instance|Count2[21]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.874      ;
+; -7.207 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[27]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.874      ;
+; -7.206 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|Count2[24]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.873      ;
+; -7.206 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|Count2[17]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.873      ;
+; -7.192 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|Count2[24]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.859      ;
+; -7.188 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|Count2[18]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.855      ;
+; -7.182 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|Count2[17]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.849      ;
+; -7.180 ; fsm:add_instance|Count2[2]    ; fsm:add_instance|Count2[28]   ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.847      ;
+; -7.171 ; fsm:add_instance|Count2[26]   ; fsm:add_instance|fsm_state.s4 ; input_vector[9] ; input_vector[9] ; 1.000        ; 0.000      ; 7.838      ;
++--------+-------------------------------+-------------------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'fsm:add_instance|fsm_state.s1'                                                                                                                                       ;
++--------+-------------------------------+--------------------------------+---------------------------+-------------------------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                        ; Launch Clock              ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+--------------------------------+---------------------------+-------------------------------+--------------+------------+------------+
+; -1.570 ; fsm:add_instance|Count[0]     ; fsm:add_instance|next_count[3] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.606      ; 4.502      ;
+; -1.545 ; fsm:add_instance|Count[0]     ; fsm:add_instance|next_count[2] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.611      ; 4.315      ;
+; -1.338 ; fsm:add_instance|Count[1]     ; fsm:add_instance|next_count[3] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.606      ; 4.270      ;
+; -1.240 ; fsm:add_instance|Count[3]     ; fsm:add_instance|next_count[3] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.606      ; 4.172      ;
+; -1.176 ; fsm:add_instance|fsm_state.s6 ; fsm:add_instance|next_count[1] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.605      ; 3.956      ;
+; -1.150 ; fsm:add_instance|fsm_state.s2 ; fsm:add_instance|next_count[2] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.611      ; 3.920      ;
+; -1.137 ; fsm:add_instance|Count[0]     ; fsm:add_instance|next_count[1] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.605      ; 3.917      ;
+; -0.977 ; fsm:add_instance|fsm_state.s2 ; fsm:add_instance|next_count[3] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.606      ; 3.909      ;
+; -0.947 ; fsm:add_instance|fsm_state.s2 ; fsm:add_instance|next_count[1] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.605      ; 3.727      ;
+; -0.804 ; fsm:add_instance|Count[1]     ; fsm:add_instance|next_count[1] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.605      ; 3.584      ;
+; -0.778 ; fsm:add_instance|fsm_state.s6 ; fsm:add_instance|next_count[2] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.611      ; 3.548      ;
+; -0.768 ; fsm:add_instance|Count[1]     ; fsm:add_instance|next_count[2] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.611      ; 3.538      ;
+; -0.696 ; fsm:add_instance|fsm_state.s2 ; fsm:add_instance|next_count[0] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.531      ; 3.368      ;
+; -0.600 ; fsm:add_instance|fsm_state.s6 ; fsm:add_instance|next_count[3] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.606      ; 3.532      ;
+; -0.546 ; fsm:add_instance|Count[0]     ; fsm:add_instance|next_count[0] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.531      ; 3.218      ;
+; -0.118 ; fsm:add_instance|fsm_state.s6 ; fsm:add_instance|next_count[0] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 3.531      ; 2.790      ;
+; 1.725  ; fsm:add_instance|Count[2]     ; fsm:add_instance|next_count[3] ; fsm:add_instance|Count[2] ; fsm:add_instance|fsm_state.s1 ; 0.500        ; 7.425      ; 4.902      ;
+; 1.750  ; fsm:add_instance|Count[2]     ; fsm:add_instance|next_count[2] ; fsm:add_instance|Count[2] ; fsm:add_instance|fsm_state.s1 ; 0.500        ; 7.430      ; 4.715      ;
+; 2.225  ; fsm:add_instance|Count[2]     ; fsm:add_instance|next_count[3] ; fsm:add_instance|Count[2] ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 7.425      ; 4.902      ;
+; 2.250  ; fsm:add_instance|Count[2]     ; fsm:add_instance|next_count[2] ; fsm:add_instance|Count[2] ; fsm:add_instance|fsm_state.s1 ; 1.000        ; 7.430      ; 4.715      ;
++--------+-------------------------------+--------------------------------+---------------------------+-------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'fsm:add_instance|fsm_state.s1'                                                                                                                                        ;
++--------+-------------------------------+--------------------------------+---------------------------+-------------------------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                        ; Launch Clock              ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+--------------------------------+---------------------------+-------------------------------+--------------+------------+------------+
+; -3.091 ; fsm:add_instance|Count[2]     ; fsm:add_instance|next_count[2] ; fsm:add_instance|Count[2] ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 7.430      ; 4.715      ;
+; -2.899 ; fsm:add_instance|Count[2]     ; fsm:add_instance|next_count[3] ; fsm:add_instance|Count[2] ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 7.425      ; 4.902      ;
+; -2.591 ; fsm:add_instance|Count[2]     ; fsm:add_instance|next_count[2] ; fsm:add_instance|Count[2] ; fsm:add_instance|fsm_state.s1 ; -0.500       ; 7.430      ; 4.715      ;
+; -2.399 ; fsm:add_instance|Count[2]     ; fsm:add_instance|next_count[3] ; fsm:add_instance|Count[2] ; fsm:add_instance|fsm_state.s1 ; -0.500       ; 7.425      ; 4.902      ;
+; -0.741 ; fsm:add_instance|fsm_state.s6 ; fsm:add_instance|next_count[0] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.531      ; 2.790      ;
+; -0.313 ; fsm:add_instance|Count[0]     ; fsm:add_instance|next_count[0] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.531      ; 3.218      ;
+; -0.163 ; fsm:add_instance|fsm_state.s2 ; fsm:add_instance|next_count[0] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.531      ; 3.368      ;
+; -0.074 ; fsm:add_instance|fsm_state.s6 ; fsm:add_instance|next_count[3] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.606      ; 3.532      ;
+; -0.073 ; fsm:add_instance|Count[1]     ; fsm:add_instance|next_count[2] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.611      ; 3.538      ;
+; -0.063 ; fsm:add_instance|fsm_state.s6 ; fsm:add_instance|next_count[2] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.611      ; 3.548      ;
+; -0.021 ; fsm:add_instance|Count[1]     ; fsm:add_instance|next_count[1] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.605      ; 3.584      ;
+; 0.122  ; fsm:add_instance|fsm_state.s2 ; fsm:add_instance|next_count[1] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.605      ; 3.727      ;
+; 0.303  ; fsm:add_instance|fsm_state.s2 ; fsm:add_instance|next_count[3] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.606      ; 3.909      ;
+; 0.309  ; fsm:add_instance|fsm_state.s2 ; fsm:add_instance|next_count[2] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.611      ; 3.920      ;
+; 0.312  ; fsm:add_instance|Count[0]     ; fsm:add_instance|next_count[1] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.605      ; 3.917      ;
+; 0.351  ; fsm:add_instance|fsm_state.s6 ; fsm:add_instance|next_count[1] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.605      ; 3.956      ;
+; 0.566  ; fsm:add_instance|Count[3]     ; fsm:add_instance|next_count[3] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.606      ; 4.172      ;
+; 0.664  ; fsm:add_instance|Count[1]     ; fsm:add_instance|next_count[3] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.606      ; 4.270      ;
+; 0.704  ; fsm:add_instance|Count[0]     ; fsm:add_instance|next_count[2] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.611      ; 4.315      ;
+; 0.896  ; fsm:add_instance|Count[0]     ; fsm:add_instance|next_count[3] ; input_vector[9]           ; fsm:add_instance|fsm_state.s1 ; 0.000        ; 3.606      ; 4.502      ;
++--------+-------------------------------+--------------------------------+---------------------------+-------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'input_vector[9]'                                                                                                                                           ;
++--------+-------------------------------+-------------------------------+-------------------------------+-----------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                       ; Launch Clock                  ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+-------------------------------+-------------------------------+-----------------+--------------+------------+------------+
+; -2.499 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[28]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 1.917      ;
+; -1.999 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[28]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 1.917      ;
+; -1.987 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 2.429      ;
+; -1.980 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[11]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 2.436      ;
+; -1.516 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[12]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 2.900      ;
+; -1.506 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 2.910      ;
+; -1.505 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[13]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 2.911      ;
+; -1.487 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[9]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 2.429      ;
+; -1.480 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[11]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 2.436      ;
+; -1.404 ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s3 ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 3.012      ;
+; -1.402 ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s7 ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 3.014      ;
+; -1.299 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[30]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.117      ;
+; -1.290 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[17]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.126      ;
+; -1.288 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[18]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.128      ;
+; -1.287 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[19]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.129      ;
+; -1.284 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[16]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.132      ;
+; -1.215 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s2 ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.201      ;
+; -1.060 ; fsm:add_instance|Count[2]     ; fsm:add_instance|W            ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 3.356      ;
+; -1.019 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.397      ;
+; -1.016 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[12]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 2.900      ;
+; -1.006 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[8]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 2.910      ;
+; -1.005 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[13]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 2.911      ;
+; -0.958 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[22]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.458      ;
+; -0.958 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[20]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.458      ;
+; -0.954 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.462      ;
+; -0.951 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.465      ;
+; -0.942 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.474      ;
+; -0.940 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[14]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.476      ;
+; -0.938 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[23]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.478      ;
+; -0.937 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[10]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.479      ;
+; -0.936 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[21]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.480      ;
+; -0.904 ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s3 ; fsm:add_instance|Count[2]     ; input_vector[9] ; -0.500       ; 3.819      ; 3.012      ;
+; -0.902 ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s7 ; fsm:add_instance|Count[2]     ; input_vector[9] ; -0.500       ; 3.819      ; 3.014      ;
+; -0.874 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.542      ;
+; -0.832 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[15]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.584      ;
+; -0.832 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[29]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.584      ;
+; -0.831 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[31]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.585      ;
+; -0.799 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[30]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.117      ;
+; -0.797 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s8 ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.619      ;
+; -0.790 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[17]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.126      ;
+; -0.788 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[18]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.128      ;
+; -0.787 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[19]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.129      ;
+; -0.784 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[16]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.132      ;
+; -0.715 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s2 ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.201      ;
+; -0.692 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[2]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.724      ;
+; -0.691 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[3]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.725      ;
+; -0.690 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[0]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.726      ;
+; -0.689 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[1]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.727      ;
+; -0.579 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count[3]     ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.837      ;
+; -0.560 ; fsm:add_instance|Count[2]     ; fsm:add_instance|W            ; fsm:add_instance|Count[2]     ; input_vector[9] ; -0.500       ; 3.819      ; 3.356      ;
+; -0.519 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[4]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.397      ;
+; -0.499 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count[0]     ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.917      ;
+; -0.461 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.955      ;
+; -0.458 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[22]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.458      ;
+; -0.458 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[20]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.458      ;
+; -0.454 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count[1]     ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 3.962      ;
+; -0.454 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[6]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.462      ;
+; -0.451 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[7]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.465      ;
+; -0.442 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[5]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.474      ;
+; -0.440 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[14]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.476      ;
+; -0.438 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[23]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.478      ;
+; -0.437 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[10]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.479      ;
+; -0.436 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[21]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.480      ;
+; -0.374 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.542      ;
+; -0.361 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s4 ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 4.055      ;
+; -0.332 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[15]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.584      ;
+; -0.332 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[29]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.584      ;
+; -0.331 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[31]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.585      ;
+; -0.313 ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s4 ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 4.103      ;
+; -0.297 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s8 ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.619      ;
+; -0.192 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[2]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.724      ;
+; -0.191 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[3]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.725      ;
+; -0.190 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[0]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.726      ;
+; -0.189 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[1]    ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.727      ;
+; -0.163 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[24]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 4.253      ;
+; -0.157 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[27]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 4.259      ;
+; -0.122 ; fsm:add_instance|Count[2]     ; fsm:add_instance|wr           ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 4.294      ;
+; -0.079 ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count[3]     ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.837      ;
+; 0.001  ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count[0]     ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.917      ;
+; 0.024  ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[26]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 4.440      ;
+; 0.026  ; fsm:add_instance|Count[2]     ; fsm:add_instance|R            ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 4.442      ;
+; 0.026  ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[25]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; 0.000        ; 3.819      ; 4.442      ;
+; 0.039  ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.955      ;
+; 0.046  ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count[1]     ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 3.962      ;
+; 0.139  ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s4 ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 4.055      ;
+; 0.175  ; fsm:add_instance|Count[2]     ; fsm:add_instance|Count[2]     ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 4.591      ;
+; 0.187  ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s4 ; fsm:add_instance|Count[2]     ; input_vector[9] ; -0.500       ; 3.819      ; 4.103      ;
+; 0.274  ; fsm:add_instance|Count[2]     ; fsm:add_instance|Count[3]     ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 4.690      ;
+; 0.285  ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s8 ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 4.701      ;
+; 0.337  ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[24]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 4.253      ;
+; 0.343  ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[27]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 4.259      ;
+; 0.378  ; fsm:add_instance|Count[2]     ; fsm:add_instance|wr           ; fsm:add_instance|Count[2]     ; input_vector[9] ; -0.500       ; 3.819      ; 4.294      ;
+; 0.437  ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 4.853      ;
+; 0.524  ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[26]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 4.440      ;
+; 0.526  ; fsm:add_instance|Count[2]     ; fsm:add_instance|R            ; fsm:add_instance|Count[2]     ; input_vector[9] ; -0.500       ; 3.819      ; 4.442      ;
+; 0.526  ; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|Count2[25]   ; fsm:add_instance|fsm_state.s1 ; input_vector[9] ; -0.500       ; 3.819      ; 4.442      ;
+; 0.531  ; fsm:add_instance|Count[2]     ; fsm:add_instance|rd           ; fsm:add_instance|Count[2]     ; input_vector[9] ; 0.000        ; 3.819      ; 4.947      ;
+; 0.675  ; fsm:add_instance|Count[2]     ; fsm:add_instance|Count[2]     ; fsm:add_instance|Count[2]     ; input_vector[9] ; -0.500       ; 3.819      ; 4.591      ;
+; 0.774  ; fsm:add_instance|Count[2]     ; fsm:add_instance|Count[3]     ; fsm:add_instance|Count[2]     ; input_vector[9] ; -0.500       ; 3.819      ; 4.690      ;
+; 0.785  ; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s8 ; fsm:add_instance|Count[2]     ; input_vector[9] ; -0.500       ; 3.819      ; 4.701      ;
++--------+-------------------------------+-------------------------------+-------------------------------+-----------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                           ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s1 ; 2        ; 2        ; 0        ; 0        ;
+; input_vector[9]               ; fsm:add_instance|fsm_state.s1 ; 16       ; 0        ; 0        ; 0        ;
+; fsm:add_instance|Count[2]     ; input_vector[9]               ; 15       ; 15       ; 0        ; 0        ;
+; fsm:add_instance|fsm_state.s1 ; input_vector[9]               ; 44       ; 40       ; 0        ; 0        ;
+; input_vector[9]               ; input_vector[9]               ; 1139     ; 0        ; 0        ; 0        ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                            ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; fsm:add_instance|Count[2]     ; fsm:add_instance|fsm_state.s1 ; 2        ; 2        ; 0        ; 0        ;
+; input_vector[9]               ; fsm:add_instance|fsm_state.s1 ; 16       ; 0        ; 0        ; 0        ;
+; fsm:add_instance|Count[2]     ; input_vector[9]               ; 15       ; 15       ; 0        ; 0        ;
+; fsm:add_instance|fsm_state.s1 ; input_vector[9]               ; 44       ; 40       ; 0        ; 0        ;
+; input_vector[9]               ; input_vector[9]               ; 1139     ; 0        ; 0        ; 0        ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 65    ; 65   ;
+; Unconstrained Output Ports      ; 12    ; 12   ;
+; Unconstrained Output Port Paths ; 14    ; 14   ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------------------------------------------+
+; Clock Status Summary                                                               ;
++-------------------------------+-------------------------------+------+-------------+
+; Target                        ; Clock                         ; Type ; Status      ;
++-------------------------------+-------------------------------+------+-------------+
+; fsm:add_instance|Count[2]     ; fsm:add_instance|Count[2]     ; Base ; Constrained ;
+; fsm:add_instance|fsm_state.s1 ; fsm:add_instance|fsm_state.s1 ; Base ; Constrained ;
+; input_vector[9]               ; input_vector[9]               ; Base ; Constrained ;
++-------------------------------+-------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                               ;
++------------------+--------------------------------------------------------------------------------------+
+; Input Port       ; Comment                                                                              ;
++------------------+--------------------------------------------------------------------------------------+
+; input_vector[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[10] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                ;
++-------------------+---------------------------------------------------------------------------------------+
+; Output Port       ; Comment                                                                               ;
++-------------------+---------------------------------------------------------------------------------------+
+; output_vector[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[8]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[9]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[10] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[11] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                               ;
++------------------+--------------------------------------------------------------------------------------+
+; Input Port       ; Comment                                                                              ;
++------------------+--------------------------------------------------------------------------------------+
+; input_vector[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[10] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                ;
++-------------------+---------------------------------------------------------------------------------------+
+; Output Port       ; Comment                                                                               ;
++-------------------+---------------------------------------------------------------------------------------+
+; output_vector[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[8]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[9]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[10] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output_vector[11] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri Apr 12 16:58:23 2019
+Info: Command: quartus_sta ADCconv -c DUT
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Warning (335093): The Timing Analyzer is analyzing 12 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'DUT.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name input_vector[9] input_vector[9]
+    Info (332105): create_clock -period 1.000 -name fsm:add_instance|Count[2] fsm:add_instance|Count[2]
+    Info (332105): create_clock -period 1.000 -name fsm:add_instance|fsm_state.s1 fsm:add_instance|fsm_state.s1
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -7.871
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -7.871            -298.219 input_vector[9] 
+    Info (332119):    -1.570              -4.987 fsm:add_instance|fsm_state.s1 
+Info (332146): Worst-case hold slack is -3.091
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.091              -6.752 fsm:add_instance|fsm_state.s1 
+    Info (332119):    -2.499             -41.779 input_vector[9] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 input_vector[9] 
+    Info (332119):     0.500               0.000 fsm:add_instance|Count[2] 
+    Info (332119):     0.500               0.000 fsm:add_instance|fsm_state.s1 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 724 megabytes
+    Info: Processing ended: Fri Apr 12 16:58:23 2019
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

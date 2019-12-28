@@ -1,0 +1,34 @@
+-- A DUT entity is used to wrap your design.
+--  This example shows how you can do this for the
+--  Full-adder.
+
+library ieee;
+use ieee.std_logic_1164.all;
+entity DUT is
+   port(input_vector: in std_logic_vector(3 downto 0);
+       	output_vector: out std_logic_vector(2 downto 0));
+end entity;
+
+architecture DutWrap of DUT is
+  component ADCconv is
+  port (cs, wr, rd: out std_logic;
+          strobe, intr : in std_logic;
+         clk, reset : in std_logic);
+ end component;
+begin
+
+   -- input/output vector element ordering is critical,
+   -- and must match the ordering in the trace file!
+   add_instance: ADCconv
+			port map (
+					-- order of inputs Cin B A
+					clk=> input_vector(3),
+			    		reset=> input_vector(2),
+              			        strobe=> input_vector(1),
+            				intr=> input_vector(0),
+					cs => output_vector(3),
+ 					wr => output_vector(3),
+					rd => output_vector(3));
+
+end DutWrap;
+
