@@ -1,0 +1,36 @@
+|DUT
+input_vector[0] => Fsm:add_instance.u
+input_vector[1] => Fsm:add_instance.r
+input_vector[2] => Fsm:add_instance.clk
+output_vector[0] << Fsm:add_instance.y
+
+
+|DUT|Fsm:add_instance
+r => q2.OUTPUTSELECT
+r => q1.OUTPUTSELECT
+r => q0.OUTPUTSELECT
+u => Mux0.IN4
+u => Mux0.IN5
+u => Mux0.IN6
+u => Mux2.IN2
+u => Mux2.IN3
+u => Mux2.IN4
+u => Mux2.IN5
+u => Mux2.IN6
+u => Mux3.IN7
+u => Mux3.IN6
+u => Mux0.IN2
+u => Mux0.IN3
+u => Mux1.IN0
+u => Mux1.IN1
+u => Mux1.IN2
+u => Mux1.IN3
+u => Mux1.IN4
+u => Mux1.IN5
+u => Mux1.IN6
+y <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+clk => q0.CLK
+clk => q1.CLK
+clk => q2.CLK
+
+
