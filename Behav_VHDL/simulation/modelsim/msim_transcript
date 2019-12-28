@@ -1,0 +1,163 @@
+# do DUT_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /home/gaurav/Desktop/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/gaurav/Desktop/lab4/part3.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:01:39 on Mar 09,2019
+# vcom -reportprogress 300 -93 -work work /home/gaurav/Desktop/lab4/part3.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity example_2
+# -- Compiling architecture behav_1 of example_2
+# -- Compiling architecture behav_2 of example_2
+# -- Loading entity example_2
+# End time: 19:01:39 on Mar 09,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+vcom -reportprogress 300 -work work /home/gaurav/Desktop/lab4/part1.vhdl
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:01:55 on Mar 09,2019
+# vcom -reportprogress 300 -work work /home/gaurav/Desktop/lab4/part1.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity example_1
+# -- Compiling architecture behav_1 of example_1
+# -- Compiling architecture behav_2 of example_1
+# -- Loading entity example_1
+# -- Compiling architecture behav_3 of example_1
+# -- Loading entity example_1
+# End time: 19:01:55 on Mar 09,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/gaurav/Desktop/lab4/part1.vhdl
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:01:57 on Mar 09,2019
+# vcom -reportprogress 300 -work work /home/gaurav/Desktop/lab4/part1.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity example_1
+# -- Compiling architecture behav_1 of example_1
+# -- Compiling architecture behav_2 of example_1
+# -- Loading entity example_1
+# -- Compiling architecture behav_3 of example_1
+# -- Loading entity example_1
+# End time: 19:01:57 on Mar 09,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -i -l msim_transcript work.example_1(behav_1)
+# vsim -i -l msim_transcript work.example_1(behav_1) 
+# Start time: 19:02:14 on Mar 09,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.example_1(behav_1)
+add wave -position insertpoint  \
+sim:/example_1/c \
+sim:/example_1/a \
+sim:/example_1/b
+run 40ns
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim -i -l msim_transcript work.example_1(behav_2)
+# End time: 19:02:55 on Mar 09,2019, Elapsed time: 0:00:41
+# Errors: 0, Warnings: 1
+# vsim -i -l msim_transcript work.example_1(behav_2) 
+# Start time: 19:02:55 on Mar 09,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.example_1(behav_2)
+add wave -position insertpoint  \
+sim:/example_1/c \
+sim:/example_1/a \
+sim:/example_1/b
+run 40ns
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim -i -l msim_transcript work.example_1(behav_3)
+# End time: 19:03:24 on Mar 09,2019, Elapsed time: 0:00:29
+# Errors: 0, Warnings: 1
+# vsim -i -l msim_transcript work.example_1(behav_3) 
+# Start time: 19:03:24 on Mar 09,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.example_1(behav_3)
+add wave -position insertpoint  \
+sim:/example_1/c \
+sim:/example_1/a \
+sim:/example_1/b
+run 40ns
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim -i -l msim_transcript work.example_2(behav_1)
+# End time: 19:04:31 on Mar 09,2019, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 1
+# vsim -i -l msim_transcript work.example_2(behav_1) 
+# Start time: 19:04:31 on Mar 09,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.example_2(behav_1)
+add wave -position insertpoint  \
+sim:/example_2/clock \
+sim:/example_2/a \
+sim:/example_2/d \
+sim:/example_2/b \
+sim:/example_2/c
+force -freeze sim:/example_2/clock 1 0, 0 {5000 ps} -r {10 ns}
+force -freeze sim:/example_2/a 1 0
+run 40ns
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+force -freeze sim:/example_2/a 0 0
+run 40ns
+vsim -i -l msim_transcript work.example_2(behav_2)
+# End time: 19:06:33 on Mar 09,2019, Elapsed time: 0:02:02
+# Errors: 0, Warnings: 1
+# vsim -i -l msim_transcript work.example_2(behav_2) 
+# Start time: 19:06:33 on Mar 09,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.example_2(behav_2)
+add wave -position insertpoint  \
+sim:/example_2/clock \
+sim:/example_2/a \
+sim:/example_2/d
+force -freeze sim:/example_2/clock 1 0, 0 {5000 ps} -r {10 ns}
+force -freeze sim:/example_2/a 1 0, 0 {5000 ps} -r {10 ns}
+force -freeze sim:/example_2/d 1 0, 0 {50 ps} -r 100
+force -freeze sim:/example_2/clock 1 0, 0 {5000 ps} -r {10 ns}
+force -freeze sim:/example_2/clock 1 0
+run 40ns
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+noforce sim:/example_2/clock
+vsim -i -l msim_transcript work.example_2(behav_2)
+# End time: 19:07:45 on Mar 09,2019, Elapsed time: 0:01:12
+# Errors: 0, Warnings: 1
+# vsim -i -l msim_transcript work.example_2(behav_2) 
+# Start time: 19:07:45 on Mar 09,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.example_2(behav_2)
+add wave -position insertpoint  \
+sim:/example_2/clock \
+sim:/example_2/a \
+sim:/example_2/d
+force -freeze sim:/example_2/clock 1 0, 0 {5000 ps} -r {10 ns}
+force -freeze sim:/example_2/a 1 0
+run 40ns
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+force -freeze sim:/example_2/a 0 0
+run 40ns
+# End time: 19:08:42 on Mar 09,2019, Elapsed time: 0:00:57
+# Errors: 0, Warnings: 1

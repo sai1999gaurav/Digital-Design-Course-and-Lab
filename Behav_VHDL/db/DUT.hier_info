@@ -1,0 +1,6 @@
+|example_2
+clock => d~reg0.CLK
+a => d~reg0.DATAIN
+d <= d~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
