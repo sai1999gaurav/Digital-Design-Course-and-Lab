@@ -1,0 +1,802 @@
+Timing Analyzer report for DUT
+Wed Mar 27 14:53:33 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'TCLK'
+ 12. Setup: 'TRST'
+ 13. Hold: 'TRST'
+ 14. Hold: 'TCLK'
+ 15. Recovery: 'TCLK'
+ 16. Removal: 'TCLK'
+ 17. Setup Transfers
+ 18. Hold Transfers
+ 19. Recovery Transfers
+ 20. Removal Transfers
+ 21. Report TCCS
+ 22. Report RSKM
+ 23. Unconstrained Paths Summary
+ 24. Clock Status Summary
+ 25. Unconstrained Input Ports
+ 26. Unconstrained Output Ports
+ 27. Unconstrained Input Ports
+ 28. Unconstrained Output Ports
+ 29. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; DUT                                                 ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                           ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; TCLK       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { TCLK } ;
+; TRST       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { TRST } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 98.04 MHz  ; 98.04 MHz       ; TCLK       ;      ;
+; 139.94 MHz ; 139.94 MHz      ; TRST       ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; TCLK  ; -9.200 ; -106.326      ;
+; TRST  ; -7.116 ; -68.149       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; TRST  ; 0.770 ; 0.000         ;
+; TCLK  ; 0.817 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Recovery Summary               ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; TCLK  ; -1.303 ; -6.515        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Removal Summary               ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; TCLK  ; 1.249 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; TCLK  ; -2.289 ; -2.289        ;
+; TRST  ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'TCLK'                                                                                                                                                                      ;
++--------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                        ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -9.200 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 9.867      ;
+; -8.991 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 9.658      ;
+; -8.723 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 9.390      ;
+; -8.617 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 9.284      ;
+; -8.604 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 9.271      ;
+; -8.230 ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0     ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; -2.305     ; 6.592      ;
+; -7.717 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1    ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; -2.305     ; 6.079      ;
+; -7.695 ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1      ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; -2.305     ; 6.057      ;
+; -7.522 ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1     ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; -2.305     ; 5.884      ;
+; -7.518 ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0      ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; -2.305     ; 5.880      ;
+; -7.373 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2    ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; -2.305     ; 5.735      ;
+; -7.255 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0    ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; -2.305     ; 5.617      ;
+; -7.177 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 7.844      ;
+; -7.177 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 7.844      ;
+; -7.177 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 7.844      ;
+; -7.177 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 7.844      ;
+; -7.177 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 7.844      ;
+; -7.177 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 7.844      ;
+; -7.172 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 7.839      ;
+; -6.490 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; -2.305     ; 4.852      ;
+; -6.439 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; -2.305     ; 4.801      ;
+; -5.648 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 6.315      ;
+; -5.648 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 6.315      ;
+; -5.626 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 6.293      ;
+; -5.616 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 6.283      ;
+; -5.614 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 6.281      ;
+; -5.596 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 6.263      ;
+; -5.402 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[6]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 6.069      ;
+; -5.335 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 6.002      ;
+; -5.333 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 6.000      ;
+; -5.330 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.997      ;
+; -5.329 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.996      ;
+; -5.304 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.971      ;
+; -5.304 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.971      ;
+; -5.282 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.949      ;
+; -5.272 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.939      ;
+; -5.270 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.937      ;
+; -5.252 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.919      ;
+; -5.079 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; -2.305     ; 3.441      ;
+; -5.058 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[6]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.725      ;
+; -5.013 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.680      ;
+; -5.011 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.678      ;
+; -5.008 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.675      ;
+; -5.007 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.674      ;
+; -4.993 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.660      ;
+; -4.895 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.562      ;
+; -4.851 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.518      ;
+; -4.850 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.517      ;
+; -4.671 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.338      ;
+; -4.653 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.320      ;
+; -4.573 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.240      ;
+; -4.570 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.237      ;
+; -4.570 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.237      ;
+; -4.570 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.237      ;
+; -4.570 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.237      ;
+; -4.570 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.237      ;
+; -4.570 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.237      ;
+; -4.565 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.232      ;
+; -4.529 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.196      ;
+; -4.528 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 5.195      ;
+; -4.011 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 11.738     ;
+; -3.958 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 4.625      ;
+; -3.511 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 1.000        ; 7.560      ; 11.738     ;
+; -3.425 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 4.092      ;
+; -3.412 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 4.079      ;
+; -3.406 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 4.073      ;
+; -3.332 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 3.999      ;
+; -2.792 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[6]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 3.459      ;
+; -2.765 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 3.432      ;
+; -2.520 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 3.187      ;
+; -2.213 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 2.880      ;
+; -2.155 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 2.822      ;
+; -1.782 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 2.449      ;
+; -1.735 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|current_state.s_DR      ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 2.402      ;
+; -1.729 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|current_state.s_idle    ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 2.396      ;
+; -1.698 ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 2.365      ;
+; -1.682 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.409      ;
+; -1.680 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.407      ;
+; -1.677 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.404      ;
+; -1.676 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.403      ;
+; -1.520 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|current_state.s_shift   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 2.187      ;
+; -1.511 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|current_state.s_update  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 2.178      ;
+; -1.465 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 2.132      ;
+; -1.457 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 2.124      ;
+; -1.436 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.163      ;
+; -1.436 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.163      ;
+; -1.414 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.141      ;
+; -1.404 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.131      ;
+; -1.402 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.129      ;
+; -1.384 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.111      ;
+; -1.340 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.067      ;
+; -1.284 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|current_state.s_update  ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 1.951      ;
+; -1.275 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.002      ;
+; -1.275 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.002      ;
+; -1.274 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|current_state.s_shift   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 1.941      ;
+; -1.257 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|current_state.s_idle    ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 1.924      ;
+; -1.247 ; Scan_Chain:scan_instance|current_state.s_DR      ; Scan_Chain:scan_instance|current_state.s_capture ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 1.914      ;
+; -1.239 ; Scan_Chain:scan_instance|current_state.s_DR      ; Scan_Chain:scan_instance|current_state.s_DR      ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 1.906      ;
+; -1.209 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 1.876      ;
+; -1.205 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TCLK         ; TCLK        ; 1.000        ; 0.000      ; 1.872      ;
++--------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'TRST'                                                                                                                                                                  ;
++--------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                      ; To Node                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -7.116 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 10.088     ;
+; -7.081 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 10.053     ;
+; -7.038 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 10.010     ;
+; -7.031 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 10.003     ;
+; -6.907 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.879      ;
+; -6.904 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.876      ;
+; -6.848 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.820      ;
+; -6.842 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.814      ;
+; -6.822 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.794      ;
+; -6.773 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.745      ;
+; -6.742 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.714      ;
+; -6.717 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.689      ;
+; -6.697 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.669      ;
+; -6.667 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.639      ;
+; -6.654 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.626      ;
+; -6.639 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.611      ;
+; -6.633 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.605      ;
+; -6.554 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.526      ;
+; -6.533 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.505      ;
+; -6.479 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.451      ;
+; -6.448 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.420      ;
+; -6.420 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.392      ;
+; -6.413 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.385      ;
+; -6.387 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.359      ;
+; -6.365 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.337      ;
+; -6.362 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.334      ;
+; -6.285 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.257      ;
+; -6.267 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.239      ;
+; -6.266 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.238      ;
+; -6.259 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.231      ;
+; -6.154 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.126      ;
+; -6.150 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.122      ;
+; -6.146 ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TRST         ; TRST        ; 1.000        ; 0.000      ; 6.813      ;
+; -6.107 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.079      ;
+; -6.077 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.049      ;
+; -6.073 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.045      ;
+; -6.066 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.038      ;
+; -6.051 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 9.023      ;
+; -6.021 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.993      ;
+; -6.013 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.985      ;
+; -6.002 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.974      ;
+; -5.919 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.891      ;
+; -5.863 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.835      ;
+; -5.850 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.822      ;
+; -5.663 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.635      ;
+; -5.575 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TRST         ; TRST        ; 1.000        ; 0.000      ; 6.242      ;
+; -5.499 ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TRST         ; TRST        ; 1.000        ; 0.000      ; 6.166      ;
+; -5.450 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.422      ;
+; -5.448 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.420      ;
+; -5.425 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.397      ;
+; -5.285 ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TRST         ; TRST        ; 1.000        ; 0.000      ; 5.952      ;
+; -5.237 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 8.209      ;
+; -5.231 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TRST         ; TRST        ; 1.000        ; 0.000      ; 5.898      ;
+; -5.097 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TRST         ; TRST        ; 1.000        ; 0.000      ; 5.764      ;
+; -4.794 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 7.766      ;
+; -4.671 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TRST         ; TRST        ; 1.000        ; 0.000      ; 5.338      ;
+; -4.336 ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TRST         ; TRST        ; 1.000        ; 0.000      ; 5.003      ;
+; -4.329 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TRST         ; TRST        ; 1.000        ; 0.000      ; 4.996      ;
+; -4.238 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TRST         ; TRST        ; 1.000        ; 0.000      ; 4.905      ;
+; -4.174 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TRST         ; TRST        ; 1.000        ; 0.000      ; 4.841      ;
+; -4.151 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TRST         ; TRST        ; 1.000        ; 0.000      ; 4.818      ;
+; -4.123 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TRST         ; TRST        ; 1.000        ; 0.000      ; 4.790      ;
+; -3.897 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 6.869      ;
+; -3.873 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TRST         ; TRST        ; 1.000        ; 0.000      ; 4.540      ;
+; -3.769 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TRST         ; TRST        ; 1.000        ; 0.000      ; 4.436      ;
+; -3.622 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TRST         ; TRST        ; 1.000        ; 0.000      ; 4.289      ;
+; -3.506 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TRST         ; TRST        ; 1.000        ; 0.000      ; 4.173      ;
+; -3.476 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 6.448      ;
+; -3.371 ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TRST         ; TRST        ; 1.000        ; 0.000      ; 4.038      ;
+; -3.333 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 6.305      ;
+; -3.323 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 6.295      ;
+; -3.313 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 6.285      ;
+; -3.208 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 6.180      ;
+; -3.206 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 6.178      ;
+; -3.169 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 6.141      ;
+; -3.072 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TRST         ; TRST        ; 1.000        ; 0.000      ; 3.739      ;
+; -3.025 ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TRST         ; TRST        ; 1.000        ; 0.000      ; 3.692      ;
+; -2.914 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TRST         ; TRST        ; 1.000        ; 0.000      ; 3.581      ;
+; -2.826 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 5.798      ;
+; -2.822 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 1.000        ; 2.305      ; 5.794      ;
+; -2.490 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TRST         ; TRST        ; 1.000        ; 0.000      ; 3.157      ;
+; -2.442 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TRST         ; TRST        ; 1.000        ; 0.000      ; 3.109      ;
+; -1.927 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TRST         ; TRST        ; 0.500        ; 9.865      ; 11.959     ;
+; -1.904 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TRST         ; TRST        ; 0.500        ; 9.865      ; 11.936     ;
+; -1.842 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TRST         ; TRST        ; 0.500        ; 9.865      ; 11.874     ;
+; -1.792 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TRST         ; TRST        ; 0.500        ; 9.865      ; 11.824     ;
+; -1.749 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TRST         ; TRST        ; 0.500        ; 9.865      ; 11.781     ;
+; -1.684 ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TRST         ; TRST        ; 1.000        ; 0.000      ; 2.351      ;
+; -1.653 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TRST         ; TRST        ; 0.500        ; 9.865      ; 11.685     ;
+; -1.564 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TRST         ; TRST        ; 0.500        ; 9.865      ; 11.596     ;
+; -1.560 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TRST         ; TRST        ; 0.500        ; 9.865      ; 11.592     ;
+; -1.466 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TRST         ; TRST        ; 0.500        ; 9.865      ; 11.498     ;
+; -1.427 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TRST         ; TRST        ; 1.000        ; 9.865      ; 11.959     ;
+; -1.404 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TRST         ; TRST        ; 1.000        ; 9.865      ; 11.936     ;
+; -1.342 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TRST         ; TRST        ; 1.000        ; 9.865      ; 11.874     ;
+; -1.341 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TRST         ; TRST        ; 0.500        ; 9.865      ; 11.373     ;
+; -1.292 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TRST         ; TRST        ; 1.000        ; 9.865      ; 11.824     ;
+; -1.252 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TRST         ; TRST        ; 1.000        ; 0.000      ; 1.919      ;
+; -1.249 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TRST         ; TRST        ; 1.000        ; 9.865      ; 11.781     ;
+; -1.223 ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TRST         ; TRST        ; 1.000        ; 0.000      ; 1.890      ;
++--------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'TRST'                                                                                                                                                                  ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                      ; To Node                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.770 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TRST         ; TRST        ; 0.000        ; 9.865      ; 10.856     ;
+; 0.778 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TRST         ; TRST        ; 0.000        ; 9.865      ; 10.864     ;
+; 0.786 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TRST         ; TRST        ; 0.000        ; 9.865      ; 10.872     ;
+; 0.790 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TRST         ; TRST        ; 0.000        ; 9.865      ; 10.876     ;
+; 0.823 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TRST         ; TRST        ; 0.000        ; 9.865      ; 10.909     ;
+; 0.823 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TRST         ; TRST        ; 0.000        ; 9.865      ; 10.909     ;
+; 0.964 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TRST         ; TRST        ; 0.000        ; 9.865      ; 11.050     ;
+; 1.171 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TRST         ; TRST        ; 0.000        ; 9.865      ; 11.257     ;
+; 1.172 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TRST         ; TRST        ; 0.000        ; 9.865      ; 11.258     ;
+; 1.224 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TRST         ; TRST        ; 0.000        ; 9.865      ; 11.310     ;
+; 1.270 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TRST         ; TRST        ; -0.500       ; 9.865      ; 10.856     ;
+; 1.278 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TRST         ; TRST        ; -0.500       ; 9.865      ; 10.864     ;
+; 1.286 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TRST         ; TRST        ; -0.500       ; 9.865      ; 10.872     ;
+; 1.290 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TRST         ; TRST        ; -0.500       ; 9.865      ; 10.876     ;
+; 1.323 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TRST         ; TRST        ; -0.500       ; 9.865      ; 10.909     ;
+; 1.323 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TRST         ; TRST        ; -0.500       ; 9.865      ; 10.909     ;
+; 1.400 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 3.926      ;
+; 1.464 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TRST         ; TRST        ; -0.500       ; 9.865      ; 11.050     ;
+; 1.669 ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TRST         ; TRST        ; 0.000        ; 0.000      ; 1.890      ;
+; 1.671 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TRST         ; TRST        ; -0.500       ; 9.865      ; 11.257     ;
+; 1.672 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TRST         ; TRST        ; -0.500       ; 9.865      ; 11.258     ;
+; 1.698 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TRST         ; TRST        ; 0.000        ; 0.000      ; 1.919      ;
+; 1.724 ; TRST                                           ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TRST         ; TRST        ; -0.500       ; 9.865      ; 11.310     ;
+; 1.946 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TRST         ; TRST        ; 0.000        ; 0.000      ; 2.167      ;
+; 2.129 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TRST         ; TRST        ; 0.000        ; 0.000      ; 2.350      ;
+; 2.130 ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TRST         ; TRST        ; 0.000        ; 0.000      ; 2.351      ;
+; 2.836 ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TRST         ; TRST        ; 0.000        ; 0.000      ; 3.057      ;
+; 2.888 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TRST         ; TRST        ; 0.000        ; 0.000      ; 3.109      ;
+; 2.936 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TRST         ; TRST        ; 0.000        ; 0.000      ; 3.157      ;
+; 3.268 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 5.794      ;
+; 3.272 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 5.798      ;
+; 3.281 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TRST         ; TRST        ; 0.000        ; 0.000      ; 3.502      ;
+; 3.300 ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TRST         ; TRST        ; 0.000        ; 0.000      ; 3.521      ;
+; 3.360 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TRST         ; TRST        ; 0.000        ; 0.000      ; 3.581      ;
+; 3.393 ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TRST         ; TRST        ; 0.000        ; 0.000      ; 3.614      ;
+; 3.471 ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TRST         ; TRST        ; 0.000        ; 0.000      ; 3.692      ;
+; 3.615 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 6.141      ;
+; 3.652 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 6.178      ;
+; 3.654 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 6.180      ;
+; 3.759 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 6.285      ;
+; 3.769 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 6.295      ;
+; 3.779 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 6.305      ;
+; 3.922 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 6.448      ;
+; 3.952 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.173      ;
+; 3.958 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 6.484      ;
+; 3.958 ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.179      ;
+; 3.993 ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.214      ;
+; 3.999 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.220      ;
+; 4.068 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.289      ;
+; 4.123 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.344      ;
+; 4.215 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.436      ;
+; 4.319 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.540      ;
+; 4.343 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 6.869      ;
+; 4.361 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.582      ;
+; 4.524 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.745      ;
+; 4.684 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TRST         ; TRST        ; 0.000        ; 0.000      ; 4.905      ;
+; 4.826 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TRST         ; TRST        ; 0.000        ; 0.000      ; 5.047      ;
+; 4.855 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 7.381      ;
+; 4.928 ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TRST         ; TRST        ; 0.000        ; 0.000      ; 5.149      ;
+; 5.086 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 7.612      ;
+; 5.088 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 7.614      ;
+; 5.240 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 7.766      ;
+; 5.509 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.035      ;
+; 5.683 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.209      ;
+; 5.700 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.226      ;
+; 5.730 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.256      ;
+; 5.730 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.256      ;
+; 5.730 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.256      ;
+; 5.742 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.268      ;
+; 5.751 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.277      ;
+; 5.802 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.328      ;
+; 5.802 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.328      ;
+; 5.805 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.331      ;
+; 5.841 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.367      ;
+; 5.871 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.397      ;
+; 5.877 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.403      ;
+; 5.887 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.413      ;
+; 5.894 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.420      ;
+; 5.993 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.519      ;
+; 6.108 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.634      ;
+; 6.109 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.635      ;
+; 6.155 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.681      ;
+; 6.167 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.693      ;
+; 6.179 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.705      ;
+; 6.296 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.822      ;
+; 6.309 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q2  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.835      ;
+; 6.346 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q0    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.872      ;
+; 6.356 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.882      ;
+; 6.406 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.932      ;
+; 6.409 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.935      ;
+; 6.430 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q1   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.956      ;
+; 6.442 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 8.968      ;
+; 6.491 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q1  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 9.017      ;
+; 6.497 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 9.023      ;
+; 6.508 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2] ; DUT:dut_instance|ALL1:add_instance|KNIFE:k|q0  ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 9.034      ;
+; 6.519 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|GUN:g|q1    ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 9.045      ;
+; 6.579 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 9.105      ;
+; 6.600 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 9.126      ;
+; 6.667 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1 ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 9.193      ;
+; 6.667 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4] ; DUT:dut_instance|ALL1:add_instance|BOMB:b|q0   ; TCLK         ; TRST        ; 0.000        ; 2.305      ; 9.193      ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'TCLK'                                                                                                                                                                      ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                        ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.817 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 8.598      ;
+; 0.900 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[6]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 8.681      ;
+; 1.029 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 8.810      ;
+; 1.082 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 8.863      ;
+; 1.143 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 8.924      ;
+; 1.144 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 8.925      ;
+; 1.188 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 8.969      ;
+; 1.216 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 8.997      ;
+; 1.221 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.002      ;
+; 1.221 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.002      ;
+; 1.221 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.002      ;
+; 1.221 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.002      ;
+; 1.283 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.064      ;
+; 1.313 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.094      ;
+; 1.317 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 8.598      ;
+; 1.321 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.102      ;
+; 1.400 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[6]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 8.681      ;
+; 1.529 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 8.810      ;
+; 1.582 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 8.863      ;
+; 1.643 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 8.924      ;
+; 1.644 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 8.925      ;
+; 1.651 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 1.872      ;
+; 1.655 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 1.876      ;
+; 1.685 ; Scan_Chain:scan_instance|current_state.s_DR      ; Scan_Chain:scan_instance|current_state.s_DR      ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 1.906      ;
+; 1.688 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 8.969      ;
+; 1.693 ; Scan_Chain:scan_instance|current_state.s_DR      ; Scan_Chain:scan_instance|current_state.s_capture ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 1.914      ;
+; 1.703 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|current_state.s_idle    ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 1.924      ;
+; 1.716 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 8.997      ;
+; 1.720 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|current_state.s_shift   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 1.941      ;
+; 1.721 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.002      ;
+; 1.721 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.002      ;
+; 1.721 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.002      ;
+; 1.721 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.002      ;
+; 1.730 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|current_state.s_update  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 1.951      ;
+; 1.783 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.064      ;
+; 1.813 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.094      ;
+; 1.821 ; TRST                                             ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.102      ;
+; 1.903 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 2.124      ;
+; 1.911 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 2.132      ;
+; 1.957 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|current_state.s_update  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 2.178      ;
+; 1.966 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|current_state.s_shift   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 2.187      ;
+; 2.144 ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 2.365      ;
+; 2.175 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|current_state.s_idle    ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 2.396      ;
+; 2.181 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|current_state.s_DR      ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 2.402      ;
+; 2.228 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 2.449      ;
+; 2.601 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 2.822      ;
+; 2.659 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 2.880      ;
+; 2.966 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 3.187      ;
+; 3.211 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 3.432      ;
+; 3.238 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[6]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 3.459      ;
+; 3.778 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 3.999      ;
+; 3.852 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 4.073      ;
+; 3.858 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 4.079      ;
+; 3.871 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 4.092      ;
+; 4.404 ; Scan_Chain:scan_instance|current_state.s_idle    ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 4.625      ;
+; 4.974 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.195      ;
+; 4.975 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.196      ;
+; 5.011 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.232      ;
+; 5.016 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.237      ;
+; 5.016 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.237      ;
+; 5.016 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.237      ;
+; 5.016 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.237      ;
+; 5.016 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.237      ;
+; 5.016 ; Scan_Chain:scan_instance|current_state.s_update  ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.237      ;
+; 5.019 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.240      ;
+; 5.099 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.320      ;
+; 5.117 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.338      ;
+; 5.296 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[1]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.517      ;
+; 5.297 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.518      ;
+; 5.341 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.562      ;
+; 5.439 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.660      ;
+; 5.453 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.674      ;
+; 5.454 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.675      ;
+; 5.457 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.678      ;
+; 5.459 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.680      ;
+; 5.504 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[6]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.725      ;
+; 5.525 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q0   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 0.000        ; -2.305     ; 3.441      ;
+; 5.698 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.919      ;
+; 5.716 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.937      ;
+; 5.718 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.939      ;
+; 5.728 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.949      ;
+; 5.750 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.971      ;
+; 5.750 ; Scan_Chain:scan_instance|current_state.s_shift   ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.971      ;
+; 5.775 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[6]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.996      ;
+; 5.776 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[2]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 5.997      ;
+; 5.779 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[3]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.000      ;
+; 5.781 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.002      ;
+; 5.848 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[6]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.069      ;
+; 6.042 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[1]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.263      ;
+; 6.060 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.281      ;
+; 6.062 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.283      ;
+; 6.072 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.293      ;
+; 6.094 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.315      ;
+; 6.094 ; Scan_Chain:scan_instance|current_state.s_capture ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.315      ;
+; 6.696 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[3]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.917      ;
+; 6.712 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 6.933      ;
+; 6.885 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q2   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 0.000        ; -2.305     ; 4.801      ;
+; 6.936 ; DUT:dut_instance|ALL1:add_instance|TERROR:t|q1   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TRST         ; TCLK        ; 0.000        ; -2.305     ; 4.852      ;
+; 7.137 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[2]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 7.358      ;
+; 7.170 ; Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[4]   ; Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[0]  ; TCLK         ; TCLK        ; 0.000        ; 0.000      ; 7.391      ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'TCLK'                                                                                                                            ;
++--------+-----------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.303 ; TRST      ; Scan_Chain:scan_instance|current_state.s_capture ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.030      ;
+; -1.303 ; TRST      ; Scan_Chain:scan_instance|current_state.s_shift   ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.030      ;
+; -1.303 ; TRST      ; Scan_Chain:scan_instance|current_state.s_update  ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.030      ;
+; -1.303 ; TRST      ; Scan_Chain:scan_instance|current_state.s_idle    ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.030      ;
+; -1.303 ; TRST      ; Scan_Chain:scan_instance|current_state.s_DR      ; TRST         ; TCLK        ; 0.500        ; 7.560      ; 9.030      ;
+; -0.803 ; TRST      ; Scan_Chain:scan_instance|current_state.s_capture ; TRST         ; TCLK        ; 1.000        ; 7.560      ; 9.030      ;
+; -0.803 ; TRST      ; Scan_Chain:scan_instance|current_state.s_shift   ; TRST         ; TCLK        ; 1.000        ; 7.560      ; 9.030      ;
+; -0.803 ; TRST      ; Scan_Chain:scan_instance|current_state.s_update  ; TRST         ; TCLK        ; 1.000        ; 7.560      ; 9.030      ;
+; -0.803 ; TRST      ; Scan_Chain:scan_instance|current_state.s_idle    ; TRST         ; TCLK        ; 1.000        ; 7.560      ; 9.030      ;
+; -0.803 ; TRST      ; Scan_Chain:scan_instance|current_state.s_DR      ; TRST         ; TCLK        ; 1.000        ; 7.560      ; 9.030      ;
++--------+-----------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'TCLK'                                                                                                                            ;
++-------+-----------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.249 ; TRST      ; Scan_Chain:scan_instance|current_state.s_capture ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.030      ;
+; 1.249 ; TRST      ; Scan_Chain:scan_instance|current_state.s_shift   ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.030      ;
+; 1.249 ; TRST      ; Scan_Chain:scan_instance|current_state.s_update  ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.030      ;
+; 1.249 ; TRST      ; Scan_Chain:scan_instance|current_state.s_idle    ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.030      ;
+; 1.249 ; TRST      ; Scan_Chain:scan_instance|current_state.s_DR      ; TRST         ; TCLK        ; 0.000        ; 7.560      ; 9.030      ;
+; 1.749 ; TRST      ; Scan_Chain:scan_instance|current_state.s_capture ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.030      ;
+; 1.749 ; TRST      ; Scan_Chain:scan_instance|current_state.s_shift   ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.030      ;
+; 1.749 ; TRST      ; Scan_Chain:scan_instance|current_state.s_update  ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.030      ;
+; 1.749 ; TRST      ; Scan_Chain:scan_instance|current_state.s_idle    ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.030      ;
+; 1.749 ; TRST      ; Scan_Chain:scan_instance|current_state.s_DR      ; TRST         ; TCLK        ; -0.500       ; 7.560      ; 9.030      ;
++-------+-----------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; TCLK       ; TCLK     ; 90       ; 0        ; 0        ; 0        ;
+; TRST       ; TCLK     ; 49       ; 39       ; 0        ; 0        ;
+; TCLK       ; TRST     ; 125      ; 0        ; 0        ; 0        ;
+; TRST       ; TRST     ; 107      ; 63       ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; TCLK       ; TCLK     ; 90       ; 0        ; 0        ; 0        ;
+; TRST       ; TCLK     ; 49       ; 39       ; 0        ; 0        ;
+; TCLK       ; TRST     ; 125      ; 0        ; 0        ; 0        ;
+; TRST       ; TRST     ; 107      ; 63       ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; TRST       ; TCLK     ; 5        ; 5        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; TRST       ; TCLK     ; 5        ; 5        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 21    ; 21   ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; TCLK   ; TCLK  ; Base ; Constrained ;
+; TRST   ; TRST  ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; TDI        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TMS        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; TDO         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; TDI        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TMS        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; TDO         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Mar 27 14:53:32 2019
+Info: Command: quartus_sta ALL1 -c DUT
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'DUT.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name TCLK TCLK
+    Info (332105): create_clock -period 1.000 -name TRST TRST
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -9.200
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -9.200            -106.326 TCLK 
+    Info (332119):    -7.116             -68.149 TRST 
+Info (332146): Worst-case hold slack is 0.770
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.770               0.000 TRST 
+    Info (332119):     0.817               0.000 TCLK 
+Info (332146): Worst-case recovery slack is -1.303
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.303              -6.515 TCLK 
+Info (332146): Worst-case removal slack is 1.249
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.249               0.000 TCLK 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 TCLK 
+    Info (332119):    -2.289              -2.289 TRST 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 722 megabytes
+    Info: Processing ended: Wed Mar 27 14:53:33 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

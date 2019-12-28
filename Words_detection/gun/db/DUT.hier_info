@@ -1,0 +1,34 @@
+|DUT
+input_vector[0] => GUN:add_instance.u[0]
+input_vector[1] => GUN:add_instance.u[1]
+input_vector[2] => GUN:add_instance.u[2]
+input_vector[3] => GUN:add_instance.u[3]
+input_vector[4] => GUN:add_instance.u[4]
+input_vector[5] => GUN:add_instance.r
+input_vector[6] => GUN:add_instance.clk
+output_vector[0] << GUN:add_instance.y
+
+
+|DUT|GUN:add_instance
+r => q1.OUTPUTSELECT
+r => q0.OUTPUTSELECT
+u[0] => Equal0.IN4
+u[0] => Equal1.IN4
+u[0] => Equal2.IN1
+u[1] => Equal0.IN3
+u[1] => Equal1.IN1
+u[1] => Equal2.IN4
+u[2] => Equal0.IN2
+u[2] => Equal1.IN3
+u[2] => Equal2.IN3
+u[3] => Equal0.IN1
+u[3] => Equal1.IN0
+u[3] => Equal2.IN2
+u[4] => Equal0.IN0
+u[4] => Equal1.IN2
+u[4] => Equal2.IN0
+y <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+clk => q0.CLK
+clk => q1.CLK
+
+

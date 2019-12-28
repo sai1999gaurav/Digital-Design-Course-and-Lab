@@ -1,0 +1,39 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ALL1 is
+   port (r: in std_logic; u: in std_logic_vector(4 downto 0); y: out std_logic; clk: in std_logic);
+end entity;
+
+architecture Behave of ALL1 is
+  signal q2, q1, q0: std_logic;
+
+component BOMB is
+port (r: in std_logic; u: in std_logic_vector(4 downto 0); y: out std_logic; clk: in std_logic);
+end component BOMB;
+component GUN is
+port (r: in std_logic; u: in std_logic_vector(4 downto 0); y: out std_logic; clk: in std_logic);
+end component GUN;
+component TERROR is
+port (r: in std_logic; u: in std_logic_vector(4 downto 0); y: out std_logic; clk: in std_logic);
+end component TERROR;
+component KNIFE is
+port (r: in std_logic; u: in std_logic_vector(4 downto 0); y: out std_logic; clk: in std_logic);
+end component KNIFE;
+begin
+  process(r,u,q1,q0,q2, clk)
+
+  begin
+     bomb: BOMB
+     port map(r=>r, u=>u, clk=>clk, y=>y); 
+     gun: GUN
+     port map(r=>r, u=>u, clk=>clk, y=>y);
+     knife: KNIFE
+     port map(r=>r, u=>u, clk=>clk, y=>y);
+     terror: TERROR
+     port map(r=>r, u=>u, clk=>clk, y=>y);   
+  end process;
+
+end Behave;
+
+

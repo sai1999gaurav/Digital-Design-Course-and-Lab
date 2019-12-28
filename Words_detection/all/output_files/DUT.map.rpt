@@ -1,0 +1,416 @@
+Analysis & Synthesis report for DUT
+Wed Mar 27 14:53:29 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |TopLevel|Scan_Chain:scan_instance|current_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance
+ 13. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:In_Reg
+ 14. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:Out_Reg
+ 15. Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:Out_Reg"
+ 16. Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:In_Reg"
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Wed Mar 27 14:53:29 2019       ;
+; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name               ; DUT                                         ;
+; Top-level Entity Name       ; TopLevel                                    ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 80                                          ;
+; Total pins                  ; 5                                           ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                            ; TopLevel           ; DUT                ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                               ; Used in Netlist ; File Type       ; File Name with Absolute Path                                       ; Library ;
++----------------------------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+; ../../../Downloads/Scan_chain_files/scan_chain/TopLevel.vhdl   ; yes             ; User VHDL File  ; /home/gaurav/Downloads/Scan_chain_files/scan_chain/TopLevel.vhdl   ;         ;
+; ../../../Downloads/Scan_chain_files/scan_chain/scan_reg.vhdl   ; yes             ; User VHDL File  ; /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_reg.vhdl   ;         ;
+; ../../../Downloads/Scan_chain_files/scan_chain/scan_chain.vhdl ; yes             ; User VHDL File  ; /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_chain.vhdl ;         ;
+; ../../170070008/midsem/Gates.vhdl                              ; yes             ; User VHDL File  ; /home/gaurav/Desktop/170070008/midsem/Gates.vhdl                   ;         ;
+; terror.vhdl                                                    ; yes             ; User VHDL File  ; /home/gaurav/Desktop/lab6/all/terror.vhdl                          ;         ;
+; knife.vhdl                                                     ; yes             ; User VHDL File  ; /home/gaurav/Desktop/lab6/all/knife.vhdl                           ;         ;
+; gun.vhdl                                                       ; yes             ; User VHDL File  ; /home/gaurav/Desktop/lab6/all/gun.vhdl                             ;         ;
+; DUT.vhdl                                                       ; yes             ; User VHDL File  ; /home/gaurav/Desktop/lab6/all/DUT.vhdl                             ;         ;
+; bomb.vhdl                                                      ; yes             ; User VHDL File  ; /home/gaurav/Desktop/lab6/all/bomb.vhdl                            ;         ;
+; all1.vhdl                                                      ; yes             ; User VHDL File  ; /home/gaurav/Desktop/lab6/all/all1.vhdl                            ;         ;
++----------------------------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 80    ;
+;     -- Combinational with no register       ; 50    ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 30    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 40    ;
+;     -- 3 input functions                    ; 15    ;
+;     -- 2 input functions                    ; 25    ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 80    ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 1     ;
+;     -- asynchronous clear/load mode         ; 5     ;
+;                                             ;       ;
+; Total registers                             ; 30    ;
+; I/O pins                                    ; 5     ;
+; Maximum fan-out node                        ; TRST  ;
+; Maximum fan-out                             ; 34    ;
+; Total fan-out                               ; 305   ;
+; Average fan-out                             ; 3.59  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                     ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node    ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                   ; Entity Name ; Library Name ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------+-------------+--------------+
+; |TopLevel                     ; 80 (0)      ; 30           ; 0          ; 5    ; 0            ; 50 (0)       ; 0 (0)             ; 30 (0)           ; 0 (0)           ; 0 (0)      ; |TopLevel                                             ; TopLevel    ; work         ;
+;    |DUT:dut_instance|         ; 42 (0)      ; 10           ; 0          ; 0    ; 0            ; 32 (0)       ; 0 (0)             ; 10 (0)           ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_instance                            ; DUT         ; work         ;
+;       |ALL1:add_instance|     ; 42 (0)      ; 10           ; 0          ; 0    ; 0            ; 32 (0)       ; 0 (0)             ; 10 (0)           ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_instance|ALL1:add_instance          ; ALL1        ; work         ;
+;          |BOMB:b|             ; 9 (9)       ; 2            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_instance|ALL1:add_instance|BOMB:b   ; BOMB        ; work         ;
+;          |GUN:g|              ; 9 (9)       ; 2            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_instance|ALL1:add_instance|GUN:g    ; GUN         ; work         ;
+;          |KNIFE:k|            ; 13 (13)     ; 3            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_instance|ALL1:add_instance|KNIFE:k  ; KNIFE       ; work         ;
+;          |TERROR:t|           ; 11 (11)     ; 3            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_instance|ALL1:add_instance|TERROR:t ; TERROR      ; work         ;
+;    |Scan_Chain:scan_instance| ; 38 (7)      ; 20           ; 0          ; 0    ; 0            ; 18 (2)       ; 0 (0)             ; 20 (5)           ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance                    ; Scan_Chain  ; work         ;
+;       |Scan_Reg:In_Reg|       ; 23 (23)     ; 14           ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 14 (14)          ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg    ; Scan_Reg    ; work         ;
+;       |Scan_Reg:Out_Reg|      ; 8 (8)       ; 1            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg   ; Scan_Reg    ; work         ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevel|Scan_Chain:scan_instance|current_state                                                                               ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+; Name                    ; current_state.s_update ; current_state.s_shift ; current_state.s_capture ; current_state.s_DR ; current_state.s_idle ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+; current_state.s_idle    ; 0                      ; 0                     ; 0                       ; 0                  ; 0                    ;
+; current_state.s_DR      ; 0                      ; 0                     ; 0                       ; 1                  ; 1                    ;
+; current_state.s_capture ; 0                      ; 0                     ; 1                       ; 0                  ; 1                    ;
+; current_state.s_shift   ; 0                      ; 1                     ; 0                       ; 0                  ; 1                    ;
+; current_state.s_update  ; 1                      ; 0                     ; 0                       ; 0                  ; 1                    ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++----------------------------------------------+----------------------------------------+
+; Register name                                ; Reason for Removal                     ;
++----------------------------------------------+----------------------------------------+
+; DUT:dut_instance|ALL1:add_instance|BOMB:b|q2 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1        ;                                        ;
++----------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 30    ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[6] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[4] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; in_pins        ; 7     ; Signed Integer                               ;
+; out_pins       ; 1     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:In_Reg ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; length         ; 7     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:Out_Reg ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; length         ; 1     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:Out_Reg"                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; po   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:In_Reg" ;
++------+-------+----------+--------------------------------------------+
+; Port ; Type  ; Severity ; Details                                    ;
++------+-------+----------+--------------------------------------------+
+; pi   ; Input ; Info     ; Stuck at GND                               ;
++------+-------+----------+--------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Mar 27 14:53:16 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALL1 -c DUT
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /home/gaurav/Downloads/Scan_chain_files/scan_chain/TopLevel.vhdl
+    Info (12022): Found design unit 1: TopLevel-Struct File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/TopLevel.vhdl Line: 21
+    Info (12023): Found entity 1: TopLevel File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/TopLevel.vhdl Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_reg.vhdl
+    Info (12022): Found design unit 1: Scan_Reg-behave File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_reg.vhdl Line: 26
+    Info (12023): Found entity 1: Scan_Reg File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_reg.vhdl Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_chain.vhdl
+    Info (12022): Found design unit 1: Scan_Chain-behave File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_chain.vhdl Line: 26
+    Info (12023): Found entity 1: Scan_Chain File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_chain.vhdl Line: 10
+Warning (12090): Entity "MUX" obtained from "../../170070008/midsem/Gates.vhdl" instead of from Quartus Prime megafunction library File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 177
+Info (12021): Found 35 design units, including 17 entities, in source file /home/gaurav/Desktop/170070008/midsem/Gates.vhdl
+    Info (12022): Found design unit 1: Gates File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 3
+    Info (12022): Found design unit 2: INVERTER-Equations File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 78
+    Info (12022): Found design unit 3: AND_2-Equations File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 90
+    Info (12022): Found design unit 4: NAND_2-Equations File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 101
+    Info (12022): Found design unit 5: OR_2-Equations File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 112
+    Info (12022): Found design unit 6: NOR_2-Equations File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 123
+    Info (12022): Found design unit 7: XOR_2-Equations File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 135
+    Info (12022): Found design unit 8: XNOR_2-Equations File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 146
+    Info (12022): Found design unit 9: HALF_ADDER-Equations File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 157
+    Info (12022): Found design unit 10: FULL_ADDER-Equations File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 169
+    Info (12022): Found design unit 11: MUX-Equations File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 181
+    Info (12022): Found design unit 12: allzero-eqn File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 199
+    Info (12022): Found design unit 13: leftone-Easy File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 220
+    Info (12022): Found design unit 14: lefttwo-Easy File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 239
+    Info (12022): Found design unit 15: leftfour-Easy File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 258
+    Info (12022): Found design unit 16: rightfour-Easy File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 277
+    Info (12022): Found design unit 17: righttwo-Easy File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 296
+    Info (12022): Found design unit 18: rightone-Easy File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 316
+    Info (12023): Found entity 1: INVERTER File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 74
+    Info (12023): Found entity 2: AND_2 File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 86
+    Info (12023): Found entity 3: NAND_2 File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 97
+    Info (12023): Found entity 4: OR_2 File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 108
+    Info (12023): Found entity 5: NOR_2 File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 119
+    Info (12023): Found entity 6: XOR_2 File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 131
+    Info (12023): Found entity 7: XNOR_2 File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 142
+    Info (12023): Found entity 8: HALF_ADDER File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 153
+    Info (12023): Found entity 9: FULL_ADDER File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 165
+    Info (12023): Found entity 10: MUX File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 177
+    Info (12023): Found entity 11: allzero File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 195
+    Info (12023): Found entity 12: leftone File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 215
+    Info (12023): Found entity 13: lefttwo File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 234
+    Info (12023): Found entity 14: leftfour File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 253
+    Info (12023): Found entity 15: rightfour File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 272
+    Info (12023): Found entity 16: righttwo File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 291
+    Info (12023): Found entity 17: rightone File: /home/gaurav/Desktop/170070008/midsem/Gates.vhdl Line: 311
+Info (12021): Found 2 design units, including 1 entities, in source file terror.vhdl
+    Info (12022): Found design unit 1: TERROR-Behave File: /home/gaurav/Desktop/lab6/all/terror.vhdl Line: 8
+    Info (12023): Found entity 1: TERROR File: /home/gaurav/Desktop/lab6/all/terror.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file knife.vhdl
+    Info (12022): Found design unit 1: KNIFE-Behave File: /home/gaurav/Desktop/lab6/all/knife.vhdl Line: 8
+    Info (12023): Found entity 1: KNIFE File: /home/gaurav/Desktop/lab6/all/knife.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file gun.vhdl
+    Info (12022): Found design unit 1: GUN-Behave File: /home/gaurav/Desktop/lab6/all/gun.vhdl Line: 8
+    Info (12023): Found entity 1: GUN File: /home/gaurav/Desktop/lab6/all/gun.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file DUT.vhdl
+    Info (12022): Found design unit 1: DUT-DutWrap File: /home/gaurav/Desktop/lab6/all/DUT.vhdl Line: 12
+    Info (12023): Found entity 1: DUT File: /home/gaurav/Desktop/lab6/all/DUT.vhdl Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file bomb.vhdl
+    Info (12022): Found design unit 1: BOMB-Behave File: /home/gaurav/Desktop/lab6/all/bomb.vhdl Line: 8
+    Info (12023): Found entity 1: BOMB File: /home/gaurav/Desktop/lab6/all/bomb.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file all1.vhdl
+    Info (12022): Found design unit 1: ALL1-Behave File: /home/gaurav/Desktop/lab6/all/all1.vhdl Line: 9
+    Info (12023): Found entity 1: ALL1 File: /home/gaurav/Desktop/lab6/all/all1.vhdl Line: 5
+Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
+Info (12128): Elaborating entity "Scan_Chain" for hierarchy "Scan_Chain:scan_instance" File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/TopLevel.vhdl Line: 64
+Warning (10036): Verilog HDL or VHDL warning at scan_chain.vhdl(46): object "unused" assigned a value but never read File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_chain.vhdl Line: 46
+Info (12128): Elaborating entity "Scan_Reg" for hierarchy "Scan_Chain:scan_instance|Scan_Reg:In_Reg" File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_chain.vhdl Line: 53
+Info (12128): Elaborating entity "Scan_Reg" for hierarchy "Scan_Chain:scan_instance|Scan_Reg:Out_Reg" File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_chain.vhdl Line: 55
+Warning (10445): VHDL Subtype or Type Declaration warning at scan_reg.vhdl(36): subtype or type has null range File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/scan_reg.vhdl Line: 36
+Info (12128): Elaborating entity "DUT" for hierarchy "DUT:dut_instance" File: /home/gaurav/Downloads/Scan_chain_files/scan_chain/TopLevel.vhdl Line: 74
+Info (12128): Elaborating entity "ALL1" for hierarchy "DUT:dut_instance|ALL1:add_instance" File: /home/gaurav/Desktop/lab6/all/DUT.vhdl Line: 20
+Info (12128): Elaborating entity "BOMB" for hierarchy "DUT:dut_instance|ALL1:add_instance|BOMB:b" File: /home/gaurav/Desktop/lab6/all/all1.vhdl Line: 25
+Info (12128): Elaborating entity "GUN" for hierarchy "DUT:dut_instance|ALL1:add_instance|GUN:g" File: /home/gaurav/Desktop/lab6/all/all1.vhdl Line: 27
+Info (12128): Elaborating entity "KNIFE" for hierarchy "DUT:dut_instance|ALL1:add_instance|KNIFE:k" File: /home/gaurav/Desktop/lab6/all/all1.vhdl Line: 29
+Info (12128): Elaborating entity "TERROR" for hierarchy "DUT:dut_instance|ALL1:add_instance|TERROR:t" File: /home/gaurav/Desktop/lab6/all/all1.vhdl Line: 31
+Info (12128): Elaborating entity "OR_2" for hierarchy "DUT:dut_instance|ALL1:add_instance|OR_2:o1" File: /home/gaurav/Desktop/lab6/all/all1.vhdl Line: 33
+Info (21057): Implemented 85 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 80 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 946 megabytes
+    Info: Processing ended: Wed Mar 27 14:53:29 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:29
+
+

@@ -1,0 +1,41 @@
+|DUT
+input_vector[0] => TERROR:add_instance.u[0]
+input_vector[1] => TERROR:add_instance.u[1]
+input_vector[2] => TERROR:add_instance.u[2]
+input_vector[3] => TERROR:add_instance.u[3]
+input_vector[4] => TERROR:add_instance.u[4]
+input_vector[5] => TERROR:add_instance.r
+input_vector[6] => TERROR:add_instance.clk
+output_vector[0] <= TERROR:add_instance.y
+
+
+|DUT|TERROR:add_instance
+r => q2.OUTPUTSELECT
+r => q1.OUTPUTSELECT
+r => q0.OUTPUTSELECT
+u[0] => Equal0.IN2
+u[0] => Equal1.IN4
+u[0] => Equal2.IN4
+u[0] => Equal3.IN2
+u[1] => Equal0.IN1
+u[1] => Equal1.IN2
+u[1] => Equal2.IN3
+u[1] => Equal3.IN4
+u[2] => Equal0.IN4
+u[2] => Equal1.IN3
+u[2] => Equal2.IN2
+u[2] => Equal3.IN1
+u[3] => Equal0.IN0
+u[3] => Equal1.IN1
+u[3] => Equal2.IN1
+u[3] => Equal3.IN0
+u[4] => Equal0.IN3
+u[4] => Equal1.IN0
+u[4] => Equal2.IN0
+u[4] => Equal3.IN3
+y <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+clk => q0.CLK
+clk => q1.CLK
+clk => q2.CLK
+
+
