@@ -1,0 +1,363 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/simulation/modelsim
+Ebooth2bit
+Z1 w1555579366
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/booth2bit_v1.vhd
+Z6 F/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/booth2bit_v1.vhd
+l0
+L6
+V0EInQY;C?96n9l2GFOeV:3
+!s100 :MVR`ck1l^JB6lVcAi5Mc3
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1555579400
+!i10b 1
+Z9 !s108 1555579400.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/booth2bit_v1.vhd|
+Z11 !s107 /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/booth2bit_v1.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehave
+R2
+R3
+R4
+DEx4 work 9 booth2bit 0 22 0EInQY;C?96n9l2GFOeV:3
+l26
+L11
+VY[6kbo<]:2:k]?K5P6F]z3
+!s100 z6U^o=1K66S3PlbN=>:zE2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edut
+Z14 w1555563724
+R3
+R4
+R0
+Z15 8/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/DUT.vhdl
+Z16 F/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/DUT.vhdl
+l0
+L7
+V6zSQ=P=fRJ7WY8?_B@b[m3
+!s100 WWQ`I>]UniTe?TSh`iCol2
+R7
+31
+R8
+!i10b 1
+Z17 !s108 1555579399.000000
+Z18 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/DUT.vhdl|
+Z19 !s107 /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/DUT.vhdl|
+!i113 1
+R12
+R13
+Adutwrap
+R3
+R4
+DEx4 work 3 dut 0 22 6zSQ=P=fRJ7WY8?_B@b[m3
+l17
+L12
+VU89PEXboo_C=cLC0R_P0`1
+!s100 ?hH3S^lQDASJ1RU=SCggG0
+R7
+31
+R8
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R12
+R13
+Efa16bit
+Z20 w1555565301
+R3
+R4
+R0
+Z21 8/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa16bit.vhd
+Z22 F/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa16bit.vhd
+l0
+L4
+Vh_o4J^^[b^n[AhBTYCb:50
+!s100 A9V[Pfj;X<04mD0@^k8;d3
+R7
+31
+Z23 !s110 1555579399
+!i10b 1
+R17
+Z24 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa16bit.vhd|
+Z25 !s107 /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa16bit.vhd|
+!i113 1
+R12
+R13
+Afa16bit_beh
+R3
+R4
+DEx4 work 7 fa16bit 0 22 h_o4J^^[b^n[AhBTYCb:50
+l21
+L11
+V5B^Go>OeTannk57ec9?ic0
+!s100 U7X?7jngdbcKDz_DdOKA62
+R7
+31
+R23
+!i10b 1
+R17
+R24
+R25
+!i113 1
+R12
+R13
+Efa1bit
+Z26 w1555579377
+R3
+R4
+R0
+Z27 8/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa1bit.vhd
+Z28 F/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa1bit.vhd
+l0
+L7
+VjTaW9g:PkUd9oCmaOd8cC3
+!s100 2:4lYHMB9V2lTBoY>[@?>0
+R7
+31
+R23
+!i10b 1
+R17
+Z29 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa1bit.vhd|
+Z30 !s107 /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa1bit.vhd|
+!i113 1
+R12
+R13
+Afa1bit_beh
+R3
+R4
+DEx4 work 6 fa1bit 0 22 jTaW9g:PkUd9oCmaOd8cC3
+l13
+L12
+V8_b3HDUOd_NAjDF4kb[jj0
+!s100 <P:`W0l73HBPCh8SlfmQZ1
+R7
+31
+R23
+!i10b 1
+R17
+R29
+R30
+!i113 1
+R12
+R13
+Efa8bit
+Z31 w1555419391
+R3
+R4
+R0
+Z32 8/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa8bit.vhd
+Z33 F/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa8bit.vhd
+l0
+L7
+VRKfGloZPU`8m4N?U0>m8m2
+!s100 6cRVQR88coJB@?S7>W?Kd1
+R7
+31
+R23
+!i10b 1
+R17
+Z34 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa8bit.vhd|
+Z35 !s107 /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/fa8bit.vhd|
+!i113 1
+R12
+R13
+Afa8bit_beh
+R3
+R4
+DEx4 work 6 fa8bit 0 22 RKfGloZPU`8m4N?U0>m8m2
+l23
+L14
+V?VMijJm[n[4ck]:gE=DXP0
+!s100 Y81oJ_c3n>lI4KDkX>fD=3
+R7
+31
+R23
+!i10b 1
+R17
+R34
+R35
+!i113 1
+R12
+R13
+Eleft_shift
+Z36 w1555579375
+R3
+R4
+R0
+Z37 8/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/left_shift.vhdl
+Z38 F/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/left_shift.vhdl
+l0
+L5
+VA<W1JgA[Wc<hOE:n:3ei:3
+!s100 KNm2OhicfbmJdDag01_K81
+R7
+31
+R23
+!i10b 1
+R17
+Z39 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/left_shift.vhdl|
+Z40 !s107 /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/left_shift.vhdl|
+!i113 1
+R12
+R13
+Adesign
+R3
+R4
+DEx4 work 10 left_shift 0 22 A<W1JgA[Wc<hOE:n:3ei:3
+l15
+L10
+V^L_ZoVZ^>b@bEAL][j?JI1
+!s100 e6QlholamA=`;eclZYo3B0
+R7
+31
+R23
+!i10b 1
+R17
+R39
+R40
+!i113 1
+R12
+R13
+Emux
+Z41 w1555579368
+R3
+R4
+R0
+Z42 8/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/MUX.vhdl
+Z43 F/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/MUX.vhdl
+l0
+L3
+V[ngU9:hI<N4S@4Y[8^GHR2
+!s100 =1WG=G[`7gZ2l<DIMf7oe2
+R7
+31
+R23
+!i10b 1
+R17
+Z44 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/MUX.vhdl|
+Z45 !s107 /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/MUX.vhdl|
+!i113 1
+R12
+R13
+Aequations
+R3
+R4
+DEx4 work 3 mux 0 22 [ngU9:hI<N4S@4Y[8^GHR2
+l8
+L7
+VnRWI6X5XKX^Lc<Y`<Oh6o2
+!s100 CY9Y3Ve?blgQ3:Pg1HaYJ3
+R7
+31
+R23
+!i10b 1
+R17
+R44
+R45
+!i113 1
+R12
+R13
+Emux3
+Z46 w1555579371
+R3
+R4
+R0
+Z47 8/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/MUX3.vhdl
+Z48 F/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/MUX3.vhdl
+l0
+L3
+Vf:g9I0`9]dAd6nSYbZC280
+!s100 ;e06c9aW:MOX0aj:3L[AE2
+R7
+31
+R23
+!i10b 1
+R17
+Z49 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/MUX3.vhdl|
+Z50 !s107 /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/MUX3.vhdl|
+!i113 1
+R12
+R13
+Aequations
+R3
+R4
+DEx4 work 4 mux3 0 22 f:g9I0`9]dAd6nSYbZC280
+l12
+L7
+VCCVW50WFDb9E2]oXRCWiO0
+!s100 6PXg8o=i<2@gRUj<^=KdZ1
+R7
+31
+R23
+!i10b 1
+R17
+R49
+R50
+!i113 1
+R12
+R13
+Etestbench
+Z51 w1555564728
+R4
+R3
+R0
+Z52 8/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/Testbench.vhdl
+Z53 F/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/Testbench.vhdl
+l0
+L7
+V]iKK_Z9L:G9B:i8c]3eFH0
+!s100 bWf8kl8zb90X@P1m>V^K20
+R7
+31
+R8
+!i10b 1
+R9
+Z54 !s90 -reportprogress|300|-93|-work|work|/home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/Testbench.vhdl|
+Z55 !s107 /home/gaurav/Desktop/Sem4/EE224/ee224_sample_vhdl_codes/booth_2bit/Testbench.vhdl|
+!i113 1
+R12
+R13
+Abehave
+R4
+R3
+DEx4 work 9 testbench 0 22 ]iKK_Z9L:G9B:i8c]3eFH0
+l69
+L9
+VLOEn5I;;jN>aA8kL:HOe40
+!s100 OACfzELE2DTWAId9h2OFB3
+R7
+31
+R8
+!i10b 1
+R9
+R54
+R55
+!i113 1
+R12
+R13

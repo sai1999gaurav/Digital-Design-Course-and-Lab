@@ -1,0 +1,118 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library work;
+use work.Gates.all;
+entity booth is
+ port(i1, i2 : in std_logic_vector(7 downto 0);
+ out1: out std_logic_vector(15 downto 0));
+end entity;
+
+architecture behave of booth is
+ component fa8bit is
+  port (a,b : in std_logic_vector(7 downto 0);					--input ports are named and their datatype is defined, a and b are 8 bit inputs to be added
+      cin : in std_logic;							--input ports are named and their datatype is defined, cin is the initial carry for addition
+   	s : out std_logic_vector(7 downto 0);					--output ports are named and their datatype is defined, s is a 8 bit sum
+     cout : out std_logic);	
+ end component;
+ component rightshift_16 is
+  port(inp: in std_logic_vector(15 downto 0); S: in std_logic;  oup1: out std_logic_vector(15 downto 0));
+ end component;
+ signal A0, A1, A2, A3, A4, A5, A6, A7,A8,A81, Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7,Q8,E0, E1, E2, E3, E4, E5, E6,E7, F0, F1, F2, F3, F4, F5, F6, F7, G0, G1, G2, G3, G4, G5, G6,G7, m , neg_m, n_m, op1, op2:std_logic_vector(7 downto 0);
+ signal in1, o1: std_logic_vector(15 downto 0);
+ signal sign, q10, q11,q12,q13,q14,q15, q16, q17,q00, q01,q02,q03,q04,q05, q06,q07 ,s0, s1, s2, s3, s4, s5, s6, s7, b0, b1, b2, b3, b4, b5, b6, b7:std_logic;
+ begin
+ Q0<=i2;
+ A0<="00000000";
+ q00<='0';
+ q10<=Q0(0);
+ m<=i1;
+ sign<= i1(7) and (not (((i1(6) or i1(5)) or (i1(4) or i1(3))) or ((i1(2) or i1(1)) or i1(0)))); 
+   neg_m(7)<= not i1(7);
+   neg_m(6)<= not i1(6);
+   neg_m(5)<= not i1(5);
+   neg_m(4)<= not i1(4);
+   neg_m(3)<= not i1(3);
+   neg_m(2)<= not i1(2);
+   neg_m(1)<= not i1(1);
+   neg_m(0)<= not i1(0);
+   fbit : fa8bit port map(a=>neg_m,b=>"00000001",cin=>'0',s=>n_m);
+   xor0: XOR_2 port map(A=>q10, B=>q00, Y=>s0);
+	mux00:MUX port map(A=>n_m, B=>m, S=>q10, C=>G0);
+   mux0: MUX port map(A=>G0, B=>"00000000", S=>s0, C=>E0);
+   f80 : fa8bit port map(a=>A0,b=>E0,cin=>'0',s=>F0);
+	b0<=F0(7) or (sign and ((not q10) and q00));
+   r00: rightone port map(ip=>F0, S=>'1', b=>b0 ,op=>A1);
+   r01: rightone port map(ip=>Q0, S=>'1', b=> F0(0), op=>Q1);
+   q01<=Q0(0);
+   q11<=Q1(0);
+	xor1: XOR_2 port map(A=>q11, B=>q01, Y=>s1);
+   mux11:MUX port map(A=>n_m, B=>m, S=>q11, C=>G1);
+   mux1: MUX port map(A=>G1, B=>"00000000", S=>s1, C=>E1);
+   f81 : fa8bit port map(a=>A1,b=>E1,cin=>'0',s=>F1);
+	b1<=F1(7) or (sign and ((not q11) and q01));
+   r10: rightone port map(ip=>F1, S=>'1',b=>b1 , op=>A2);
+   r11: rightone port map(ip=>Q1, S=>'1',b=> F1(0), op=>Q2);
+   q02<=Q1(0);
+   q12<=Q2(0);
+	xor2: XOR_2 port map(A=>q12, B=>q02, Y=>s2);
+	mux22:MUX port map(A=>n_m, B=>m, S=>q12, C=>G2);
+   mux2: MUX port map(A=>G2, B=>"00000000", S=>s2, C=>E2);
+   f82 : fa8bit port map(a=>A2,b=>E2,cin=>'0',s=>F2);
+	b2<=F2(7) or (sign and ((not q12) and q02));
+   r20: rightone port map(ip=>F2, S=>'1',b=>b2 , op=>A3);
+   r21: rightone port map(ip=>Q2, S=>'1',b=> F2(0), op=>Q3);
+   q03<=Q2(0);
+   q13<=Q3(0);
+	xor3: XOR_2 port map(A=>q13, B=>q03, Y=>s3);
+   mux33:MUX port map(A=>n_m, B=>m, S=>q13, C=>G3);
+   mux3: MUX port map(A=>G3, B=>"00000000", S=>s3, C=>E3);
+   f83 : fa8bit port map(a=>A3,b=>E3,cin=>'0',s=>F3);
+	b3<=F3(7) or (sign and ((not q13) and q03));
+   r30: rightone port map(ip=>F3, S=>'1', b=>b3 ,op=>A4);
+   r31: rightone port map(ip=>Q3, S=>'1', b=> F3(0),op=>Q4);
+   q04<=Q3(0);
+   q14<=Q4(0);
+	xor4: XOR_2 port map(A=>q14, B=>q04, Y=>s4);
+	mux44:MUX port map(A=>n_m, B=>m, S=>q14, C=>G4);
+   mux4: MUX port map(A=>G4, B=>"00000000", S=>s4, C=>E4);
+   f84 : fa8bit port map(a=>A4,b=>E4,cin=>'0',s=>F4);
+	b4<=F4(7) or (sign and ((not q14) and q04));
+   r40: rightone port map(ip=>F4, S=>'1',b=>b4 , op=>A5);
+   r41: rightone port map(ip=>Q4, S=>'1', b=> F4(0),op=>Q5);
+   q05<=Q4(0);
+   q15<=Q5(0);
+	xor5: XOR_2 port map(A=>q15, B=>q05, Y=>s5);
+	mux55:MUX port map(A=>n_m, B=>m, S=>q15, C=>G5);
+   mux5: MUX port map(A=>G5, B=>"00000000", S=>s5, C=>E5);
+   f85 : fa8bit port map(a=>A5,b=>E5,cin=>'0',s=>F5);
+	b5<=F5(7) or (sign and ((not q15) and q05));
+   r50: rightone port map(ip=>F5, S=>'1',b=>b5 , op=>A6);
+   r51: rightone port map(ip=>Q5, S=>'1',b=> F5(0), op=>Q6);
+   q06<=Q5(0);
+   q16<=Q6(0);
+	xor6: XOR_2 port map(A=>q16, B=>q06, Y=>s6);
+	mux66:MUX port map(A=>n_m, B=>m, S=>q16, C=>G6);
+   mux6: MUX port map(A=>G6, B=>"00000000", S=>s6, C=>E6);
+   f86 : fa8bit port map(a=>A6,b=>E6,cin=>'0',s=>F6);
+	b6<=F6(7) or (sign and ((not q16) and q06));
+   r60: rightone port map(ip=>F6, S=>'1',b=>b6 , op=>A7);
+   r61: rightone port map(ip=>Q6, S=>'1',b=> F6(0), op=>Q7);
+   q07<=Q6(0);
+   q17<=Q7(0);
+	xor7: XOR_2 port map(A=>q17, B=>q07, Y=>s7);
+	mux77:MUX port map(A=>n_m, B=>m, S=>q17, C=>G7);
+   mux7: MUX port map(A=>G7, B=>"00000000", S=>s7, C=>E7);
+   f87 : fa8bit port map(a=>A7,b=>E7,cin=>'0',s=>F7);
+	b7<=F7(7) or (sign and ((not q17) and q07));
+   r70: rightone port map(ip=>F7, S=>'1',b=>b7 , op=>A8);
+   r71: rightone port map(ip=>Q7, S=>'1',b=> F7(0), op=>Q8);
+	--r8: rightone_sp port map(ip=>A8, S=>sign,b=>'1' , op=>A81);
+   in1<=i1 & i2;
+   r8: rightshift_16 port map(inp=>in1, S=>sign, oup1=>o1);
+   mux8: MUX port map(A=>o1(15 downto 8), B=>A8, S=>sign, C=>op1);
+   mux9: MUX port map(A=>o1(7 downto 0), B=>Q8, S=>sign, C=>op2);
+   out1(15 downto 8)<= op1;
+   out1(7 downto 0)<=op2;
+end behave;
+
